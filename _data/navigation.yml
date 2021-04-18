@@ -1,6 +1,6 @@
 # main links
 main:
-- title: "Home"
+  - title: "Home"
     url: https://brush-up.github.io/
 # - title: "Category"
 #    url: https://brush-up.github.io/categories/
@@ -12,3 +12,4 @@ main:
 #   url: /collection-archive/
 # - title: "Sitemap"
 #   url: /sitemap/
+
