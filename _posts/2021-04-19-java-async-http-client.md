@@ -58,8 +58,8 @@ AsyncHttpClient 를 생성하면 항상 새로운 thread와 connectio pool이 �
     .
     .
     .
-    public interface NeoIdApi {
-        Pair<HttpMethod, String> changePassword = new ImmutablePair<>(POST, "/neoid-services/{serviceCode}/v1.0/members/{uid}/change-password");
+    public interface IdApi {
+        Pair<HttpMethod, String> changePassword = new ImmutablePair<>(POST, "/services/{serviceCode}/v1.0/members/{uid}/change-password");
     }
     .
     .
@@ -78,7 +78,7 @@ AsyncHttpClient 를 생성하면 항상 새로운 thread와 connectio pool이 �
 
 ### unbound 요청
     * RequestBuilder class사용해서 만들거나 Dsl 클래스를 사용해서 할수 있다.
-    ``` java
+    ```java
     Request getRequest = new RequestBuilder(HttpConstants.Methods.GET)
       .setUrl("https://www.google.com")
       .build();
@@ -86,8 +86,7 @@ AsyncHttpClient 를 생성하면 항상 새로운 thread와 connectio pool이 �
     Request getRequest = Dsl.get("https://www.google.com").build()
     ```
 * 호출까지 수행하는 하는 예제
-
-``` java
+```java
 import org.asynchttpclient.*;
 // bound
 Future<Response> whenResponse = asyncHttpClient.prepareGet("http://www.example.com/").execute();
@@ -97,10 +96,9 @@ Future<Response> whenResponse = asyncHttpClient.execute(request);
 ```
 
 ## http 요청 실행
-
 * asyncHttpClient는 동기 방식, 비동기 방식 모두 지원함
 * http 요청 실행은 bound, unbound에 따라 각자 다름
->Executing the request depends on its type. When using a ```bound request``` we use the ```execute() method``` from the ```BoundRequestBuilder``` class and when we have an ``````unbound request`````` we’ll execute it using one of the implementations of the ``````executeRequest() method`````` from the ``````AsyncHttpClient interface``````.
+>Executing the request depends on its type. When using a bound request we use the execute() method from the BoundRequestBuilder class and when we have an unbound request we’ll execute it using one of the implementations of the executeRequest() method from the AsyncHttpClient interface.
 
 ### request body 세팅하기
 * setBody method를 이용해서 할수있고
@@ -110,12 +108,10 @@ Future<Response> whenResponse = asyncHttpClient.execute(request);
 * execute()와 executeRequest() method 는 ListenableFuture 객체를 리턴하는데 이건 java Future interface를 상속받은거
 * `굳이 쓸일이 없어 쓰지마`
 * 쓸필요 없긴 하지만 예제는 아래처럼
-``` java
+```java
 Future<Response> responseFuture = boundGetRequest.execute();
 responseFuture.get();
-
 // or
-
 Future<Response> responseFuture = client.executeRequest(unboundRequest);
 responseFuture.get();
 ```
@@ -128,8 +124,7 @@ responseFuture.get();
 
 
 ##### AsyncHandler 리스너는 http 호출과 관련된 웬만한 모든 이벤트를 처리할수 있다.
-
-``` java
+```java
 request.execute(new AsyncHandler<Object>() {
     @Override
     public State onStatusReceived(HttpResponseStatus responseStatus)
@@ -275,9 +270,8 @@ https://github.com/AsyncHttpClient/async-http-client/blob/master/client/src/main
     * DefaultChannelPool 은 기본적으로 last in, first out이 기본이야.
     * 하지만 엄청난 부하를 처리할수있도록 많은 연결을 유지할수도있는데 first in first out기준으로 하도록 구성가능해
 
-``` java
-mport static org.asynchttpclient.Dsl.*;
-
+```java
+import static org.asynchttpclient.Dsl.*;
 HashedWheelTimer timer = new HashedWheelTimer();
 timer.start();
 ChannelPool pool =
