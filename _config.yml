@@ -276,7 +276,7 @@ defaults:
     values:
       layout: single
       author_profile: true
-      read_time: true
+      read_time: false # 포스트를 읽는데 걸리는 시간을 표시할지
       comments: # true
-      share: true
+      share: false # 포스트 공유 기능을 활성화 할지
       related: true
