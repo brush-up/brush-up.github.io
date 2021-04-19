@@ -1,6 +1,6 @@
 ---
-title:  "[java]-java11-http-client 대충 간략정리 "
-excerpt: "-java11에 추가된 http client를 사용해볼까?"
+title:  "[java]java11-http-client 대충 간략정리 "
+excerpt: "java11에 추가된 http client를 사용해볼까?"
 
 categories:
   - Java
@@ -290,7 +290,8 @@ HttpClient.newBuilder()
 * connection, read timeout 설정하는 예제 찾아보기.
 * 성능은?
 
-참고자료
-[https://openjdk.java.net/groups/net/httpclient/](https://openjdk.java.net/groups/net/httpclient/)
-[https://openjdk.java.net/groups/net/httpclient/intro.html](https://openjdk.java.net/groups/net/httpclient/intro.html)
-[https://openjdk.java.net/groups/net/httpclient/recipes.html](https://openjdk.java.net/groups/net/httpclient/recipes.html)
+* 참고자료
+  * [https://openjdk.java.net/groups/net/httpclient/](https://openjdk.java.net/groups/net/httpclient/)
+  * [https://openjdk.java.net/groups/net/httpclient/intro.html](https://openjdk.java.net/groups/net/httpclient/intro.html)
+  * [https://openjdk.java.net/groups/net/httpclient/recipes.html](https://openjdk.java.net/groups/net/httpclient/recipes.html)
+
