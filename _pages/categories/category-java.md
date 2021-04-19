@@ -1,8 +1,9 @@
 ---
 title: "Java 관련"
-layout: archive
-permalink: categories/java
+layout: category
+permalink: /categories/java/
 author_profile: true
+taxonomy: java
 ---
 
 Java 프로그래밍 관련된.
