@@ -109,12 +109,14 @@ last_modified_at: 2021-04-18
 
 
 # 기타
+## 여백
 * 작성하다보니 좌우 여백이 너무 거슬린다. _sass/minimal-mistakes/_variables.scss 파일의 아래 부분을 수정하면 된다.
 ```css
 $right-sidebar-width-narrow: 200px !default;
 $right-sidebar-width: 300px !default;
 $right-sidebar-width-wide: 400px !default;
 ```
+## 폰트
 * 글 크기도 살짝 마음에 안든다 . _sass/minimal-mistakes/_reset.scss 파일의 아래 부분을 수정하자.
 ```css
   @include breakpoint($large) {
@@ -125,7 +127,14 @@ $right-sidebar-width-wide: 400px !default;
     font-size: 22px;
   }
 ```
+## 검색
+* _config.yml 파일중 다음을 수정하자
+```
+search                   : true # 사이트 우측 상단 검색 활성화
+search_full_content      : true # 제목 + 내용까지도 검색할 것인지
+```
 
+## 참고
 * 참고하자 
   * https://mmistakes.github.io/minimal-mistakes/docs/posts/
   * https://mmistakes.github.io/minimal-mistakes/docs/pages/
