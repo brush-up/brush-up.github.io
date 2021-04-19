@@ -1,5 +1,5 @@
 ---
-title:  "[java]try - with -resource"
+title:  "[java]try-with-resource"
 excerpt: "try-catch-finally 대신 try-with-resource를 사용하자. "
 
 categories:
