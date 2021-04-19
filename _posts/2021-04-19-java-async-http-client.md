@@ -103,6 +103,7 @@ Future<Response> whenResponse = asyncHttpClient.execute(request);
 ### request body 세팅하기
 * setBody method를 이용해서 할수있고
 * addBodyPart method를 이용하면 multipart 도 가능하다.
+
 ### 동기 방식 요청하기
 * 비동기방식으로 디자인 되었지만 Future 객체를 블러킹해서 동기처럼 호출할수 있음
 * execute()와 executeRequest() method 는 ListenableFuture 객체를 리턴하는데 이건 java Future interface를 상속받은거
