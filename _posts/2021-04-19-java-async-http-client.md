@@ -50,56 +50,47 @@ AsyncHttpClient 를 생성하면 항상 새로운 thread와 connectio pool이 �
 * asyncHttpClient 는 bound and unbound 의 2가지 api를 제공하는데, 성능상 차이는 크게 없다.
 ### bound 요청
     * 접두사 prepare로 시작하는 metohod 사용
-
-``` java
-BoundRequestBuilder getRequest = client.prepareGet("https://www.google.com");
-```
+    ``` java
+    BoundRequestBuilder getRequest = client.prepareGet("https://www.google.com");
+    ```
     * 아래처럼 사용도 가능
-```java
-.
-.
-.
-public interface NeoIdApi {
-    Pair<HttpMethod, String> changePassword = new ImmutablePair<>(POST, "/neoid-services/{serviceCode}/v1.0/members/{uid}/change-password");
-}
-
-.
-.
-.
- 
- String url = remoteAddress + changePassword.getValue();
-        Request request = buildAsyncHttpRequest(changePassword.getKey(), url, new AsyncHttpRequestBody(forms), serviceCode, uid);
-
-        return asyncHttpClient.prepareRequest(request)
+    ```java
+    .
+    .
+    .
+    public interface NeoIdApi {
+        Pair<HttpMethod, String> changePassword = new ImmutablePair<>(POST, "/neoid-services/{serviceCode}/v1.0/members/{uid}/change-password");
+    }
+    .
+    .
+    .
+    String url = remoteAddress + changePassword.getValue();
+    Request request = buildAsyncHttpRequest(changePassword.getKey(), url, new AsyncHttpRequestBody(forms), serviceCode, uid);
+    return asyncHttpClient.prepareRequest(request)
                 .execute()
                 .toCompletableFuture()
                 .handle((response, throwable) -> {
                     ...
-
                 });
     }
-```
+    ```
 
 
 ### unbound 요청
     * RequestBuilder class사용해서 만들거나 Dsl 클래스를 사용해서 할수 있다.
-``` java
-Request getRequest = new RequestBuilder(HttpConstants.Methods.GET)
-  .setUrl("https://www.google.com")
-  .build();
-  
-// or  
-
-Request getRequest = Dsl.get("https://www.google.com").build()
-```
+    ``` java
+    Request getRequest = new RequestBuilder(HttpConstants.Methods.GET)
+      .setUrl("https://www.google.com")
+      .build();
+    // or  
+    Request getRequest = Dsl.get("https://www.google.com").build()
+    ```
 * 호출까지 수행하는 하는 예제
 
 ``` java
 import org.asynchttpclient.*;
-
 // bound
 Future<Response> whenResponse = asyncHttpClient.prepareGet("http://www.example.com/").execute();
-
 // unbound
 Request request = get("http://www.example.com/").build();
 Future<Response> whenResponse = asyncHttpClient.execute(request);
