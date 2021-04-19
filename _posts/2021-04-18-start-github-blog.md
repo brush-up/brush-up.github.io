@@ -134,7 +134,7 @@ search                   : true # 사이트 우측 상단 검색 활성화
 search_full_content      : true # 제목 + 내용까지도 검색할 것인지
 ```
 ## 기타
-* _config.yml 파일중 다음을 수정하자
+* _config.yml 파일중 다음을 수정하자 (포스트 읽는데 걸리는 시간, 공유 기등 등)
 ```
 # Defaults
 defaults:
@@ -145,9 +145,9 @@ defaults:
     values:
       layout: single
       author_profile: true
-      read_time: true # 해당 포스트를 읽는데 걸리는 시간을 표시할지
+      read_time: true # 해당 포스트를 읽는데 걸리는 시간을 표시할지. 개인적으로 불필요 정보라 생각.
       comments: # true
-      share: true # 포스트 공유 기능을 활성화 할것인지
+      share: true # 포스트 공유 기능을 활성화 할것인지. 개인적으로 별로..
       related: true
 ```
 
