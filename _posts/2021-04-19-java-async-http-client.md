@@ -1,6 +1,6 @@
 ---
 title:  "[java]AsyncHttpClient 대충 간략정리 "
-excerpt: "try-catch-finally 대신 try-with-resource를 사용하자. "
+excerpt: "AsyncHttpClient 에 대한 간단 사용법 "
 
 categories:
   - Java
