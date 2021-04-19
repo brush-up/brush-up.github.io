@@ -19,7 +19,7 @@ locale                   : "en-US"
 title                    : "Brush Up"
 title_separator          : "-"
 subtitle                 : # site tagline that appears below site title in masthead
-name                     : "Your Name"
+name                     : "My Name"
 description              : "개인 자료정리용."
 url                      : "https://brush-up.github.io" # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
