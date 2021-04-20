@@ -24,7 +24,6 @@ char* get_time_for_test()
     __time64_t long_time;
     _time64(&long_time);
     newtime = _localtime64(&long_time);
- 
     char* temp = new char[255];
     memset(temp, 0, 255);
     sprintf(temp, "%02d:%02d:%02d", newtime->tm_hour, newtime->tm_min, newtime->tm_sec);
@@ -86,7 +85,6 @@ void test_async()
     //누군가 이미 테스트를 했네.
 	//http://www.ducons.com/blog/tests-and-thoughts-on-asynchronous-io-vs-multithreading
 }
-
 ```
 
 # 실행결과
