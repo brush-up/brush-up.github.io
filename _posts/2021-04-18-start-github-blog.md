@@ -133,6 +133,25 @@ $right-sidebar-width-wide: 400px !default;
 search                   : true # 사이트 우측 상단 검색 활성화
 search_full_content      : true # 제목 + 내용까지도 검색할 것인지
 ```
+## 글 제목의 밑줄 없애자
+* _sass/minimal-mistakes/_base.scss 파일을 보면 아래처럼 되어있는데
+```
+/* links */
+a {
+  &:focus {
+    @extend %tab-focus;
+  }
+```
+* 아래처럼 수정하자
+```
+a {
+  /* a link 하이퍼링크 밑줄 없애기 */
+  text-decoration: none;
+  &:focus {
+    @extend %tab-focus;
+  }
+```
+
 ## 기타
 * _config.yml 파일중 다음을 수정하자 (포스트 읽는데 걸리는 시간, 공유 기등 등)
 ```
