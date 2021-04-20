@@ -135,7 +135,7 @@ search_full_content      : true # 제목 + 내용까지도 검색할 것인지
 ```
 ## 글 제목의 밑줄 없애자
 * _sass/minimal-mistakes/_base.scss 파일을 보면 아래처럼 되어있는데
-```
+```css
 /* links */
 a {
   &:focus {
@@ -143,7 +143,7 @@ a {
   }
 ```
 * 아래처럼 수정하자
-```
+```css
 a {
   /* a link 하이퍼링크 밑줄 없애기 */
   text-decoration: none;
