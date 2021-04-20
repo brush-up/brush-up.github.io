@@ -89,7 +89,8 @@ void test_async()
 
 # 실행결과
 * 실행 결과는 대충 이런식
-```------------------------std::launch::async 1---------------------------
+```
+------------------------std::launch::async 1---------------------------
 29:15: [main thread] before - async
 29:15: [main thread] after - async1
 29:15: [main thread] call - future
