@@ -171,23 +171,23 @@ int main(void)
 None Const Iterating: 						0.002383 sec,
 Const Iterating: 						0.001859 sec,
 std::for_each( Functor ): 					0.002610 sec,
-for each(element in Container):		        0.001847 sec,
+for each(element in Container):		          0.001847 sec,
 
 ----------test_vector_iterating(100000)----------
 None Const Iterating: 						0.024610 sec,
 Const Iterating: 						0.018763 sec,
 std::for_each( Functor ): 					0.025965 sec,
-for each(element in Container):		        0.018454 sec,
+for each(element in Container):		          0.018454 sec,
 ----------test_vector_iterating(1000000)----------
 None Const Iterating: 						0.237435 sec,
 Const Iterating: 						0.191960 sec,
 std::for_each( Functor ): 					0.265545 sec,
-for each(element in Container):		        0.185883 sec,
+for each(element in Container):		          0.185883 sec,
 ----------test_vector_iterating(10000000)----------
 None Const Iterating: 						2.380271 sec,
 Const Iterating: 						1.867360 sec,
 std::for_each( Functor ): 					2.602249 sec,
-for each(element in Container):		        1.859658 sec,
+for each(element in Container):		          1.859658 sec,
 ```
 * release 모드
 
@@ -196,23 +196,23 @@ for each(element in Container):		        1.859658 sec,
 None Const Iterating: 						0.000062 sec,
 Const Iterating: 						0.000059 sec,
 std::for_each( Functor ): 					0.000007 sec,
-for each(element in Container):		      0.000056 sec,
+for each(element in Container):		        0.000056 sec,
 
 ----------test_vector_iterating(100000)----------
 None Const Iterating: 						0.000637 sec,
 Const Iterating: 						0.000589 sec,
 std::for_each( Functor ): 					0.000070 sec,
-for each(element in Container):		      0.000556 sec,
+for each(element in Container):		        0.000556 sec,
 ----------test_vector_iterating(1000000)----------
 None Const Iterating: 						0.006262 sec,
 Const Iterating: 						0.005918 sec,
 std::for_each( Functor ): 					0.000769 sec,
-for each(element in Container):		      0.005839 sec,
+for each(element in Container):		        0.005839 sec,
 ----------test_vector_iterating(10000000)----------
 None Const Iterating: 						0.058077 sec,
 Const Iterating: 						0.054475 sec,
 std::for_each( Functor ): 					 0.007643 sec,
-for each(element in Container):		      0.051237 sec,
+for each(element in Container):		        0.051237 sec,
 ```
 * functor가 inline 하기에 적합하다고 알려진만큼 functor을 사용한 경우 성능이 월등히 뛰어남을 볼수가 있다
 
@@ -225,23 +225,23 @@ for each(element in Container):		      0.051237 sec,
 None Const Iterating: 						0.007786 sec,
 Const Iterating: 						0.004365 sec,
 std::for_each( Functor ): 					0.000317 sec,
-for each(element in Container):		      0.004041 sec,
+for each(element in Container):		        0.004041 sec,
 
 ----------test_vector_iterating(100000)----------
 None Const Iterating: 						0.039324 sec,
 Const Iterating: 						0.034428 sec,
 std::for_each( Functor ): 					0.002614 sec,
-for each(element in Container):		      0.034356 sec,
+for each(element in Container):		        0.034356 sec,
 ----------test_vector_iterating(1000000)----------
 None Const Iterating: 						0.392254 sec,
 Const Iterating: 						0.342338 sec,
 std::for_each( Functor ): 					0.026226 sec,
-for each(element in Container):		      0.342381 sec,
+for each(element in Container):		        0.342381 sec,
 ----------test_vector_iterating(10000000)----------
 None Const Iterating: 						3.923250 sec,
 Const Iterating: 						3.451026 sec,
 std::for_each( Functor ): 					0.288544 sec,
-for each(element in Container):		      3.434354 sec,
+for each(element in Container):		        3.434354 sec,
 ```
 
 * release모드에선 이렇게 여러가지 방법으로 했을때 모두, 이전 VS2008에서 functor를 사용할때만큼 성능이 다 좋게 나왔다. 
@@ -251,23 +251,23 @@ for each(element in Container):		      3.434354 sec,
 None Const Iterating: 						0.000007 sec,
 Const Iterating: 						0.000007 sec,
 std::for_each( Functor ): 					0.000007 sec,
-for each(element in Container):		      0.000007 sec,
+for each(element in Container):		        0.000007 sec,
 
 ----------test_vector_iterating(100000)----------
 None Const Iterating: 						0.000068 sec,
 Const Iterating: 						0.000068 sec,
 std::for_each( Functor ): 					0.000068 sec,
-for each(element in Container):		      0.000068 sec,
+for each(element in Container):		        0.000068 sec,
 ----------test_vector_iterating(1000000)----------
 None Const Iterating: 						0.000752 sec,
 Const Iterating: 						0.000747 sec,
 std::for_each( Functor ): 					0.000791 sec,
-for each(element in Container):		      0.000726 sec,
+for each(element in Container):		        0.000726 sec,
 ----------test_vector_iterating(10000000)----------
 None Const Iterating: 						0.008127 sec,
 Const Iterating: 						0.007530 sec,
 std::for_each( Functor ): 					0.009552 sec,
-for each(element in Container):		      0.007675 sec,
+for each(element in Container):		        0.007675 sec,
 ```
 
 * 결국, 컴파일러가 좋아질수록 ,성능을 생각한다고 매우 고민하며 알아보기 힘들게? 코드를 작성하는것보단 알아보기 쉽게 작성해도 그다지 별 문제가 없을것이란 결론?
