@@ -123,6 +123,7 @@ inline ThreadPool::~ThreadPool()
 
 ## 사용
 * 아래 사용예시는 검증 해야함.
+
 ```c++
 //test thread pool
 #include "ThreadPool.h"
@@ -133,11 +134,9 @@ public:
 	{
 		pool_ = new ThreadPool(threadCount);
 	};
-
 	virtual ~TEST_CLASS2()
 	{
 	};
-
 	void member1_of_class(int args)
 	{
 		std::cout << "call member2_of_class before: " << args << std::endl;
@@ -153,13 +152,10 @@ public:
 		std::thread::id thread_id = std::this_thread::get_id();
 		std::cout << "thread id : " << thread_id << " : " << args1 << ", " << args2 << std::endl;
 	};
-
 private:
 	std::mutex mtx_lock_;
 	ThreadPool* pool_;
 };
-
-
 void test_thread_pool()
 {
 	TEST_CLASS2 test_class(2);
