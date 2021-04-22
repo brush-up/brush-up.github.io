@@ -120,3 +120,57 @@ inline ThreadPool::~ThreadPool()
 
 #endif
 ```
+
+## 사용
+* 아래 사용예시는 검증 해야함.
+```c++
+//test thread pool
+#include "ThreadPool.h"
+class TEST_CLASS2
+{
+public:
+	TEST_CLASS2(int threadCount)
+	{
+		pool_ = new ThreadPool(threadCount);
+	};
+
+	virtual ~TEST_CLASS2()
+	{
+	};
+
+	void member1_of_class(int args)
+	{
+		std::cout << "call member2_of_class before: " << args << std::endl;
+		pool_->enqueue(&TEST_CLASS2::member2_of_class, this, args, 5);
+		std::cout << "call member2_of_class after: " << args << std::endl;
+	};
+
+	void member2_of_class(int args1, int args2)
+	{
+		std::lock_guard<std::mutex> guard(mtx_lock_);
+
+		Sleep(1000);
+		std::thread::id thread_id = std::this_thread::get_id();
+		std::cout << "thread id : " << thread_id << " : " << args1 << ", " << args2 << std::endl;
+	};
+
+private:
+	std::mutex mtx_lock_;
+	ThreadPool* pool_;
+};
+
+
+void test_thread_pool()
+{
+	TEST_CLASS2 test_class(2);
+	for (int i = 0; i < 1000; i++)
+	{
+		test_class.member1_of_class(i);
+	}
+
+	while (true)
+	{
+
+	}
+}
+```
