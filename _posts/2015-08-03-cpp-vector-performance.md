@@ -169,25 +169,25 @@ int main(void)
 ```
 ----------test_vector_iterating(10000)----------
 None Const Iterating: 						0.002383 sec,
-Const Iterating: 								0.001859 sec,
+Const Iterating: 							0.001859 sec,
 std::for_each( Functor ): 					0.002610 sec,
-for each(element in Container):		0.001847 sec,
+for each(element in Container):		  0.001847 sec,
 
 ----------test_vector_iterating(100000)----------
 None Const Iterating: 						0.024610 sec,
-Const Iterating: 								0.018763 sec,
+Const Iterating: 							0.018763 sec,
 std::for_each( Functor ): 					0.025965 sec,
-for each(element in Container):		0.018454 sec,
+for each(element in Container):		  0.018454 sec,
 ----------test_vector_iterating(1000000)----------
 None Const Iterating: 						0.237435 sec,
-Const Iterating: 								0.191960 sec,
+Const Iterating: 							0.191960 sec,
 std::for_each( Functor ): 					0.265545 sec,
-for each(element in Container):		0.185883 sec,
+for each(element in Container):		  0.185883 sec,
 ----------test_vector_iterating(10000000)----------
 None Const Iterating: 						2.380271 sec,
-Const Iterating: 								1.867360 sec,
+Const Iterating: 							1.867360 sec,
 std::for_each( Functor ): 					2.602249 sec,
-for each(element in Container):		1.859658 sec,
+for each(element in Container):		  1.859658 sec,
 ```
 * release 모드
 
