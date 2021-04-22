@@ -22,9 +22,6 @@ last_modified_at: 2015-08-03
 설치된 메모리 4.00GB
 시스템 종류: 32비트 운영 체제
 ```
-*  정교한 테스트는 아니기 때문에 대략 이러한 형태를 가지고 있다라고만 보면 될듯, 데이터 타입의 다양성과 여러차례에 걸친 평균등 이 필요하긴하다.
-	* https://baptiste-wicht.com/posts/2012/12/cpp-benchmark-vector-list-deque.html
-		* (나~~~ 중에 시간이 되면 이정되는 테스트는 해보고 싶긴함.)
 
 # test code
 
@@ -168,6 +165,7 @@ int main(void)
 * 결과가 나름 잼있었는데, 
 * 우선 VS2008 debug 와 release에선 아래처럼 결과가 나왔다.
 * debug 모드
+
 ```
 ----------test_vector_iterating(10000)----------
 None Const Iterating: 						0.002383 sec,
@@ -192,6 +190,7 @@ std::for_each( Functor ): 					2.602249 sec,
 for each(element in Container):		1.859658 sec,
 ```
 * release 모드
+
 ```
 ----------test_vector_iterating(10000)----------
 None Const Iterating: 						0.000062 sec,
@@ -220,6 +219,7 @@ for each(element in Container):		0.051237 sec,
 
 * 그런데 VS2013에서는 다음과 같이 결과가 나왔다.
 * debug모드에선 
+
 ```
 ----------test_vector_iterating(10000)----------
 None Const Iterating: 						0.007786 sec,
@@ -245,6 +245,7 @@ for each(element in Container):		3.434354 sec,
 ```
 
 * release모드에선 이렇게 여러가지 방법으로 했을때 모두, 이전 VS2008에서 functor를 사용할때만큼 성능이 다 좋게 나왔다. 
+
 ```
 ----------test_vector_iterating(10000)----------
 None Const Iterating: 						0.000007 sec,
