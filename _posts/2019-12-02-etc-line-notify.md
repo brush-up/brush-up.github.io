@@ -12,7 +12,7 @@ toc_sticky: true
  
 date: 2019-12-02
 last_modified_at: 2019-12-02
-
+---
 
 * 개인이 무료로 이용가능하고 이미지와 함께 알람 까지 받기 위해서 찾아봤을때 Line Notify 가 제일 괜찮아 보였음
 
