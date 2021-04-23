@@ -18,7 +18,7 @@ last_modified_at: 2018-11-19
 * 10년이상 지난 지금 이게 무슨 필요가 있냐 싶지만.... 일단 글을 옮기는  목적에만 충실히 하기 위해... 갈수록 편해지는 세상
 
 # 내용
-1. 크래쉬 덤프
+## 크래쉬 덤프
 * drwtsn32
 	* 첨부한 파일로 레지스터를 바꾸면 크래쉬시 drwtsn32이 자동으로 덤프파일을 남긴다.
 	* Dr. Watson 실행화면
@@ -39,7 +39,7 @@ last_modified_at: 2018-11-19
 * vsjitdebugger.reg : 이아이로도 만들수 있는데 굳이 이걸 쓸 이유는 ....
 
 
-2. 유저덤프.
+## 유저덤프.
 Userdump.exe : 이 아이를 이용해서 유저덤프를 만들수가 있다.
 http://support.microsoft.com/default.aspx?scid=kb%3Bko%3B241215   : 여기를 참조하면 도움이 될듯하지만..
 
