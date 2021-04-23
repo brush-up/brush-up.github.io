@@ -49,7 +49,7 @@ last_modified_at: 2019-12-02
 ## 메시지만 손쉽게 보내기 위해서 
 * `Content-Type:application/x-www-form-urlencoded` 사용하는 간략화한 샘플코드
 
-```C++
+```c++
 size_t CallbackRecvHeader( void* recvp, size_t size, size_t nmemb, void* userp )
 {
 	size_t realsize = size * nmemb;
@@ -215,5 +215,5 @@ X-RateLimit-Reset: 1575336631
 
 * API Limit 가 콘솔상으로 확인하지 못함 반면 구글은 아래처럼 해줌 구글 만세!
     * 구글 API (http://webholic.kr/music 에서 사용하는 youtube 검색 API 사용 관련 콘솔) 샘플
-![image]({{ site.url }}{{ site.baseurl }}/assets/images/2019-12-02-etc-line-002.png)
-![image]({{ site.url }}{{ site.baseurl }}/assets/images/2019-12-02-etc-line-003.png)
+	![image]({{ site.url }}{{ site.baseurl }}/assets/images/2019-12-02-etc-line-002.PNG)
+	![image]({{ site.url }}{{ site.baseurl }}/assets/images/2019-12-02-etc-line-003.PNG)
