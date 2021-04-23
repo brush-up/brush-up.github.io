@@ -106,7 +106,12 @@ last_modified_at: 2021-04-18
 
   blog 관련이에요.
   ```
-
+## 이미지 첨부
+* 이미지 첨부를 위해 폴더 assets 하위에 "images"를 생성해서 그 안에 넣자
+* 아래처럼 사용하면 된다.
+```
+![image]({{ site.url }}{{ site.baseurl }}/assets/images/filename.jpg)
+```
 
 # 기타
 ## 여백
