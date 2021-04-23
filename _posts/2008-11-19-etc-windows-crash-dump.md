@@ -22,6 +22,7 @@ last_modified_at: 2018-11-19
 * drwtsn32
 	* 첨부한 파일로 레지스터를 바꾸면 크래쉬시 drwtsn32이 자동으로 덤프파일을 남긴다.
 	* Dr. Watson 실행화면
+
 		![image]({{ site.url }}{{ site.baseurl }}/assets/images/2008-11-19-etc-windows-crash-dump-001.jpg)
 	* default로 덤프파일이 생성되는 곳은 다음과 같다.
 	```
@@ -40,39 +41,42 @@ last_modified_at: 2018-11-19
 
 
 ## 유저덤프.
-Userdump.exe : 이 아이를 이용해서 유저덤프를 만들수가 있다.
-http://support.microsoft.com/default.aspx?scid=kb%3Bko%3B241215   : 여기를 참조하면 도움이 될듯하지만..
+* Userdump.exe : 이 아이를 이용해서 유저덤프를 만들수가 있다.
+* http://support.microsoft.com/default.aspx?scid=kb%3Bko%3B241215   : 여기를 참조하면 도움이 될듯하지만..
 
 # 첨부파일이었던 내용
 * drwtsn32.reg
-```
-Windows Registry Editor Version 5.00
 
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\AeDebug]
-"Auto"="1"
-"Debugger"="drwtsn32 -p %ld -e %ld -g"
-"UserDebuggerHotKey"=dword:00000000
+	```
+	Windows Registry Editor Version 5.00
 
-```
+	[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\AeDebug]
+	"Auto"="1"
+	"Debugger"="drwtsn32 -p %ld -e %ld -g"
+	"UserDebuggerHotKey"=dword:00000000
+
+	```
 
 * ntsd.reg
-```
-Windows Registry Editor Version 5.00
 
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\AeDebug]
-"Auto"="1"
-"Debugger"="ntsd.exe -p %ld -e %ld -g -c \".dump /m /a /u C:\\crash.dmp;q\""
-"UserDebuggerHotKey"=dword:00000000
-```
+	```
+	Windows Registry Editor Version 5.00
+
+	[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\AeDebug]
+	"Auto"="1"
+	"Debugger"="ntsd.exe -p %ld -e %ld -g -c \".dump /m /a /u C:\\crash.dmp;q\""
+	"UserDebuggerHotKey"=dword:00000000
+	```
 
 * vsjitdebugger.reg
-```
-Windows Registry Editor Version 5.00
 
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\AeDebug]
-"Auto"="0"
-"Debugger"="\"C:\\WINDOWS\\system32\\vsjitdebugger.exe\" -p %ld -e %ld"
-"UserDebuggerHotKey"=dword:00000000
-```
+	```
+	Windows Registry Editor Version 5.00
+
+	[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\AeDebug]
+	"Auto"="0"
+	"Debugger"="\"C:\\WINDOWS\\system32\\vsjitdebugger.exe\" -p %ld -e %ld"
+	"UserDebuggerHotKey"=dword:00000000
+	```
 * Userdump.exe
 	* 굳이 이것까진 안옮김
