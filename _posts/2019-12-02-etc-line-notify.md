@@ -18,8 +18,8 @@ last_modified_at: 2019-12-02
 
 
 # LINE Notify
-### 공식 홈피 : https://notify-bot.line.me/en/
-### API 문서 : https://notify-bot.line.me/doc/en/
+* 공식 홈피 : https://notify-bot.line.me/en/
+* API 문서 : https://notify-bot.line.me/doc/en/
 
 # 시작해보자
 ## Step 1
@@ -35,13 +35,20 @@ last_modified_at: 2019-12-02
 * 생성하면 아래처럼 라인으로 축하메세지가 와요.
 
 ## Step4
-아래 API 가이드에 따라 코드를 만들어 보자
+* 아래 API 가이드에 따라 코드를 만들어 보자
+```
+Notification
 
+Overview: An API for LINE notifications. OAuth authentication is required in advance. It can be used to check connection status, actual notifications, and disconnecting.
+The host name for notification API end point is notify-api.line.me.
+.
+.
+```
 
 
 ## Step5
-메세지만 보내기 성공
-이미지도 함께 보내기 성공
+* 메세지만 보내기 성공
+* 이미지도 함께 보내기 성공
 
 
 
