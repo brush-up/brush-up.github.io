@@ -22,7 +22,7 @@ last_modified_at: 2018-11-19
 * drwtsn32
 	* 첨부한 파일로 레지스터를 바꾸면 크래쉬시 drwtsn32이 자동으로 덤프파일을 남긴다.
 	* Dr. Watson 실행화면
-	![image]({{ site.url }}{{ site.baseurl }}/assets/images/2008-11-19-etc-windows-crash-dump-001.jpg)
+		![image]({{ site.url }}{{ site.baseurl }}/assets/images/2008-11-19-etc-windows-crash-dump-001.jpg)
 	* default로 덤프파일이 생성되는 곳은 다음과 같다.
 	```
 	C:\Documents and Settings\All Users\Application Data\Microsoft\Dr Watson\user.dmp
