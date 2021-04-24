@@ -1,5 +1,5 @@
 ---
-title:  "[iOS] ios9 beta3에서 문제"
+title:  "[iOS] ios9 beta3에서의 문제"
 excerpt: "ios9 beta3버전에서 발생했던 문제."
 
 categories:
@@ -19,11 +19,17 @@ last_modified_at: 2015-07-23
 # 내용
 
 ios9 beta3 부터 client가 wss 로 server에 접근시 서명알고리즘이 sha1이면 문제가 되는듯하다..
+
 (CFNetwork SSLHandshake failed(-9850) 에러 발생)
+
 -->
+
 인줄알았으나 더 확인해보니
+
 OpenJDK 7에서 기본적으로 지원하는 프로토콜 문제였음
+
 https://bugs.launchpad.net/ubuntu/+source/openjdk-7/+bug/1314113
+
 ios9과 OpenJDK 7은 안맞는거로.. 
 
 ```
@@ -64,31 +70,32 @@ http://techglimpse.com/sha256-hash-certificate-openssl/
 http://docs.oracle.com/cd/E19900-01/820-0849/ablra/index.html
 
 인증서 생성 샘플
+
 C:\Program Files\Java\jdk1.8.0_45\bin> keytool -genkey -keystore keystore.jks -keyalg RSA -sigalg SHA256withRSA
 
 인증서 내용 보기 샘플
+
 C:\Program Files\Java\jdk1.8.0_45\bin> keytool -list -v -keystore keystore.jks
 
 
 https://developer.apple.com/videos/wwdc/2015/?id=703
-Privacy and Your App - WWDC 2015 - Videos - Apple Developer
 
 https://developer.apple.com/library/prerelease/ios/technotes/App-Transport-Security-Technote/index.html#//apple_ref/doc/uid/TP40016240 
-App Transport Security Technote: App Transport Security Technote
 
 https://developer.apple.com/videos/wwdc/2015/?id=706
-Security and Your Apps - WWDC 2015 - Videos - Apple Developer
 
 https://bugs.launchpad.net/ubuntu/+source/openjdk-7/+bug/1314113
 
 
 
 추가작성1 (2015.08.13)
+
 ios9 beta3부터 beta4까지안되더니 오늘 beta5 부터는 OpenJDK7에서도 정상적으로 동작을 한다. 
+
 - 아래는 그때당시 릴리즈 노트
 
 https://developer.apple.com/library/prerelease/ios/releasenotes/General/RN-iOSSDK-9.0/
-iOS 9 Release Notes
+
 
 
 
