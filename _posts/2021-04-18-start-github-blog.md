@@ -70,10 +70,13 @@ last_modified_at: 2021-04-18
 
   date: 2020-05-25
   last_modified_at: 2020-05-25
+
+  published: ture
   ---
   ```
  * toc : table of contents. 포스트의 헤더들만 보여주는 목차를 사용할 것인지의 여부. ture 로 해주면 포스트의 목차가 보이게 된다
  * toc_sticky : true로 해주면 목차가 스크롤을 따라 움직이게 된다
+ * published : false로 하면 포스트가 비공개로 전환된다. (물론 작성자도 못본다.)
 
 ## 카테고리, 태그 관련
 * 카테고리 페이지 등록을 위해 _pages 폴더를 생성한뒤 "category-archive.md" 파일을 만들어 아래처럼 사용하자
@@ -174,6 +177,7 @@ defaults:
       share: true # 포스트 공유 기능을 활성화 할것인지. 개인적으로 별로..
       related: true
 ```
+
 
 ## 참고
 * 참고하자 

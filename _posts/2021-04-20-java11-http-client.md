@@ -13,7 +13,7 @@ toc_sticky: true
 date: 2021-04-20
 last_modified_at: 2021-04-20
 
-published: false
+published: true
 ---
 
 * JDK9부터 인큐베이팅 API로 추가되었던 것이 Java11부터 정식으로 들어갔음.

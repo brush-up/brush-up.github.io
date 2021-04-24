@@ -1,5 +1,5 @@
 ---
-title:  "[etc]라인으로 알람을 받아보자"
+title:  "라인으로 알람을 받아보자"
 excerpt: "line 메신저를 통해알람을 받아보자"
 
 categories:
