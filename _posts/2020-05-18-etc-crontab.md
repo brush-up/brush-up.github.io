@@ -18,7 +18,7 @@ published: true
 
 # 문법
 
-```
+```bash
 *   *   *   *   *  $(BASH COMMAND)
 ┬   ┬   ┬   ┬   ┬
 │   │   │   │   │
