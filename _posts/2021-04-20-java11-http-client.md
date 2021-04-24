@@ -1,5 +1,5 @@
 ---
-title:  "[java]java11-http-client 대충 간략정리 "
+title:  "[java]java11 http client 대충 간략정리 "
 excerpt: "java11에 추가된 http client를 사용해볼까?"
 
 categories:
