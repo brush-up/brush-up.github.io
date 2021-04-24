@@ -70,13 +70,14 @@ http://techglimpse.com/sha256-hash-certificate-openssl/
 http://docs.oracle.com/cd/E19900-01/820-0849/ablra/index.html
 
 인증서 생성 샘플
-
+```
 C:\Program Files\Java\jdk1.8.0_45\bin> keytool -genkey -keystore keystore.jks -keyalg RSA -sigalg SHA256withRSA
+```
 
 인증서 내용 보기 샘플
-
+```
 C:\Program Files\Java\jdk1.8.0_45\bin> keytool -list -v -keystore keystore.jks
-
+```
 
 https://developer.apple.com/videos/wwdc/2015/?id=703
 
