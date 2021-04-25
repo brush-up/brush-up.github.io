@@ -44,9 +44,6 @@ published: true
 * `그래도 도저히 모르겠다`
     * .pfx는 .p12랑 같아!
 
-*****
-
-
 > * 인코딩 (확장자로 쓰이기도 한다.)
 > 	* .der:
 > 		* Distinguished Encoding Representation (DER)
@@ -72,18 +69,18 @@ published: true
 ## Intro
 * PE 포맷도 오픈되어있고, 해시방법도 일반적일것이라 생각해서, 리눅스에서 windows PE파일을 건드는 오픈소스가 있을 것 같아 찾아 보니 이런게 있네!
 * https://github.com/mtrojnar/osslsigncode
-```
-* osslsigncode
 
-* WHAT IS IT?
-	* osslsigncode is a small tool that implements part of the functionality of the Microsoft tool signtool.exe - more exactly the Authenticode signing and timestamping. But osslsigncode is based on OpenSSL and cURL, and thus should be able to compile on most platforms where these exist.
+> ## osslsigncode
+> 
+> * WHAT IS IT?
+>	* osslsigncode is a small tool that implements part of the functionality of the Microsoft tool signtool.exe - more exactly the Authenticode signing and timestamping. But osslsigncode is based on OpenSSL and cURL, and thus should be able to compile on most platforms where these exist.
+> 
+> * WHY?
+> 	* Why not use signtool.exe? Because I don't want to go to a Windows machine every time I need to sign a binary - I can compile and build the binaries using Wine on my Linux machine, but I can't sign them since the signtool.exe makes good use of the CryptoAPI in Windows, and these APIs aren't (yet?) fully implemented in Wine, so the signtool.exe tool would fail. And, so, osslsigncode was born.
+> 
+> * WHAT CAN IT DO?
+> 	* It can sign and timestamp PE (EXE/SYS/DLL/etc), CAB and MSI files. It supports the equivalent of signtool.exe's "-j javasign.dll -jp low", i.e. add a valid signature for a CAB file containing Java files. It supports getting the timestamp through a proxy as well. It also supports signature verification, removal and extraction.
 
-* WHY?
-	* Why not use signtool.exe? Because I don't want to go to a Windows machine every time I need to sign a binary - I can compile and build the binaries using Wine on my Linux machine, but I can't sign them since the signtool.exe makes good use of the CryptoAPI in Windows, and these APIs aren't (yet?) fully implemented in Wine, so the signtool.exe tool would fail. And, so, osslsigncode was born.
-
-* WHAT CAN IT DO?
-	* It can sign and timestamp PE (EXE/SYS/DLL/etc), CAB and MSI files. It supports the equivalent of signtool.exe's "-j javasign.dll -jp low", i.e. add a valid signature for a CAB file containing Java files. It supports getting the timestamp through a proxy as well. It also supports signature verification, removal and extraction.
-```
 * 그런데 전체 옵션에 대한 설명이 그 어디에도 없다. 소스를 보거나  출력된 usage를 보고 짐작을 해야한다.
 
 
@@ -93,7 +90,8 @@ published: true
     * sudo yum install osslsigncode
 	![image]({{ site.url }}{{ site.baseurl }}/assets/images/2019-11-11-windows-code-sign-003.png)
     * 그런데 버전이 이상하다.
-    ![image]({{ site.url }}{{ site.baseurl }}/assets/images/2019-11-11-windows-code-sign-004.png)
+    
+	![image]({{ site.url }}{{ site.baseurl }}/assets/images/2019-11-11-windows-code-sign-004.png)
     * 이상해 모르겠다. 지우자.
     ![image]({{ site.url }}{{ site.baseurl }}/assets/images/2019-11-11-windows-code-sign-005.png)
     * 낮은 버전의 osslsigncode 는 안되는 기능이 너무 많다. 
