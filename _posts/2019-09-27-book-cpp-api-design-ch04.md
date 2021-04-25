@@ -13,7 +13,7 @@ toc_sticky: true
 date: 2019-09-27
 last_modified_at: 2019-09-27
 
-published: true
+published: false
 ---
 # CHAPTER 04 설계
 
