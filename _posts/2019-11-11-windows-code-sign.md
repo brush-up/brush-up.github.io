@@ -153,18 +153,18 @@ published: true
 ![image]({{ site.url }}{{ site.baseurl }}/assets/images/2019-11-11-windows-code-sign-013.png)
 * 코드사이닝 잘 되는지 한번 해보기
 ```
-./osslsigncode-master/osslsigncode sign -pkcs12 CHAIN_nhn_com.pfx -pass PASSWORD -n yuik_test -h sha256  -t http://timestamp.verisign.com/scripts/timstamp.dll -in Sample.exe -out Sample-signed.exe 
+./osslsigncode-master/osslsigncode sign -pkcs12 CHAIN.pfx -pass PASSWORD -n test -h sha256  -t http://timestamp.verisign.com/scripts/timstamp.dll -in Sample.exe -out Sample-signed.exe 
 ```
 ![image]({{ site.url }}{{ site.baseurl }}/assets/images/2019-11-11-windows-code-sign-014.png)
 
 * 교차 인증서도 적용해보기.
 ```
-./osslsigncode-master/osslsigncode sign -pkcs12 CHAIN_nhn_com.pfx -pass PASSWORD  -ac MSCV_COMODOAddTrust.crt  -n yuik_test -h sha256  -t http://timestamp.verisign.com/scripts/timstamp.dll -in Sample.exe -out Sample-signed-crt.exe 
+./osslsigncode-master/osslsigncode sign -pkcs12 CHAIN.pfx -pass PASSWORD  -ac MSCV_COMODOAddTrust.crt  -n test -h sha256  -t http://timestamp.verisign.com/scripts/timstamp.dll -in Sample.exe -out Sample-signed-crt.exe 
 ```
 ![image]({{ site.url }}{{ site.baseurl }}/assets/images/2019-11-11-windows-code-sign-015.png)
 * 시간 생성 알고리즘 바꿔보기
 ```
-./osslsigncode-master/osslsigncode sign -pkcs12 CHAIN_nhn_com.pfx -pass PASSWORD  -ac MSCV_COMODOAddTrust.crt  -n yuik_test -h sha256  -t  http://timestamp.comodoca.com/rfc3161  -in Sample.exe -out Sample-signed-crt.exe 
+./osslsigncode-master/osslsigncode sign -pkcs12 CHAIN.pfx -pass PASSWORD  -ac MSCV_COMODOAddTrust.crt  -n test -h sha256  -t  http://timestamp.comodoca.com/rfc3161  -in Sample.exe -out Sample-signed-crt.exe 
 ```
 ![image]({{ site.url }}{{ site.baseurl }}/assets/images/2019-11-11-windows-code-sign-016.png)
 * 첨부파일 설명 (code sign.zip 압축 풀면 아래와 같이 나온다.)
