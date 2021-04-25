@@ -13,7 +13,7 @@ toc_sticky: true
 date: 2019-09-27
 last_modified_at: 2019-09-27
 
-published: true
+published: false
 ---
 # CHAPTER 07 성능
 
@@ -125,5 +125,3 @@ published: true
 * 7.9.1 시간 기반 분석
 * 7.9.2 메모리 기반 분석
 * 7.9.3 멀티스레드 분석
-
-
