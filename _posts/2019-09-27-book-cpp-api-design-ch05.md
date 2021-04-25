@@ -13,7 +13,7 @@ toc_sticky: true
 date: 2019-09-27
 last_modified_at: 2019-09-27
 
-published: true
+published: false
 ---
 # CHAPTER 05 API 개발 방법
 
@@ -41,4 +41,5 @@ published: true
 * 5.4.3 데이터 주도 API의 단점
 * 5.4.4 가변형 파리미터 리스트 지원
 * 5.4.5 사례연구 : FMOD 데이터 주도 API
+
 

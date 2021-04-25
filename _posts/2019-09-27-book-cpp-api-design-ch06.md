@@ -13,7 +13,7 @@ toc_sticky: true
 date: 2019-09-27
 last_modified_at: 2019-09-27
 
-published: true
+published: false
 ---
 # CHAPTER 06 C++의 올바른 사용
 
@@ -65,5 +65,6 @@ published: true
 * 6.9 심벌노출
 
 * 6.10 코딩 규칙
+
 
 
