@@ -120,6 +120,7 @@ published: true
 ![image]({{ site.url }}{{ site.baseurl }}/assets/images/2019-11-11-windows-code-sign-007.png)
 * 이하 생략...
 * 설치완료
+
 	![image]({{ site.url }}{{ site.baseurl }}/assets/images/2019-11-11-windows-code-sign-008.png)
 
 ***** 
@@ -136,11 +137,10 @@ published: true
 ```
 * 다시
 ![image]({{ site.url }}{{ site.baseurl }}/assets/images/2019-11-11-windows-code-sign-009.png)
-
-![image.png](/files/2607213392868442433)
-![image.png](/files/2607213605816941504)
+![image]({{ site.url }}{{ site.baseurl }}/assets/images/2019-11-11-windows-code-sign-010.png)
+![image]({{ site.url }}{{ site.baseurl }}/assets/images/2019-11-11-windows-code-sign-011.png)
 경로가 꼬임.. 하지만 설치는 됨.
-![image.png](/files/2607214096620059812)
+![image]({{ site.url }}{{ site.baseurl }}/assets/images/2019-11-11-windows-code-sign-012.png)
 
 
 * 설치 관련 참고 URL
@@ -150,23 +150,23 @@ published: true
 
 ## 이제, 실행 해보자
 * 테스트 삼아서 Sample.exe의 인증서 검증해 보기.
-![image.png](/files/2608085202800609932)
+![image]({{ site.url }}{{ site.baseurl }}/assets/images/2019-11-11-windows-code-sign-013.png)
 * 코드사이닝 잘 되는지 한번 해보기
 ```
 ./osslsigncode-master/osslsigncode sign -pkcs12 CHAIN_nhn_com.pfx -pass PASSWORD -n yuik_test -h sha256  -t http://timestamp.verisign.com/scripts/timstamp.dll -in Sample.exe -out Sample-signed.exe 
 ```
-![image.png](/files/2608086727664945411)
+![image]({{ site.url }}{{ site.baseurl }}/assets/images/2019-11-11-windows-code-sign-014.png)
 
 * 교차 인증서도 적용해보기.
 ```
 ./osslsigncode-master/osslsigncode sign -pkcs12 CHAIN_nhn_com.pfx -pass PASSWORD  -ac MSCV_COMODOAddTrust.crt  -n yuik_test -h sha256  -t http://timestamp.verisign.com/scripts/timstamp.dll -in Sample.exe -out Sample-signed-crt.exe 
 ```
-![image.png](/files/2608087538045309880)
+![image]({{ site.url }}{{ site.baseurl }}/assets/images/2019-11-11-windows-code-sign-015.png)
 * 시간 생성 알고리즘 바꿔보기
 ```
 ./osslsigncode-master/osslsigncode sign -pkcs12 CHAIN_nhn_com.pfx -pass PASSWORD  -ac MSCV_COMODOAddTrust.crt  -n yuik_test -h sha256  -t  http://timestamp.comodoca.com/rfc3161  -in Sample.exe -out Sample-signed-crt.exe 
 ```
-![image.png](/files/2608088308218360391)
+![image]({{ site.url }}{{ site.baseurl }}/assets/images/2019-11-11-windows-code-sign-016.png)
 * 첨부파일 설명 (code sign.zip 압축 풀면 아래와 같이 나온다.)
     * Sample.exe : 원본 파일(코드사인 미적용)
     ![image.png](/files/2608090439412741656)
