@@ -13,7 +13,7 @@ toc_sticky: true
 date: 2019-09-27
 last_modified_at: 2019-09-27
 
-published: true
+published: false
 ---
 
 # CHAPTER 02 품질
@@ -95,27 +95,27 @@ class B
 * 2.5.5 콜백과 옵저버, 알림
 	* 콜백, 저수준의 코드가 고수준의 코드를 호출할때 콜백을 사용하면 의존성을 만들지 않기에 유용함.
 
-```cpp
-#include <string>
-class ModuleB
-{
-public:
-typedef void (*CallbackType)(const std::string &name, void *data);
-void SetCallback(CallbackType cb, void *data);
-. . .
-private:
-CallbackType mCallback;
-void *mClosure;
-};
-```
+	```cpp
+	#include <string>
+	class ModuleB
+	{
+	public:
+	typedef void (*CallbackType)(const std::string &name, void *data);
+	void SetCallback(CallbackType cb, void *data);
+	. . .
+	private:
+	CallbackType mCallback;
+	void *mClosure;
+	};
+	```
 	* 이러면 이렇게 호출 가능하다
 
-```cpp
-if (mCallback)
-{
-(*mCallback)("Hello World", mClosure);
-}
-```
+	```cpp
+	if (mCallback)
+	{
+	(*mCallback)("Hello World", mClosure);
+	}
+	```
 	* 옵저버, 중요해서 4장에서 자세히 설명할께
 
 * 2.6 안정화와 문서화, 테스트
