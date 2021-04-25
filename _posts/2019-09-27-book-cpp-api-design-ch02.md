@@ -88,7 +88,9 @@ class B
 * 2.5.4 매니저 클래스
 	* 매니저 클래스는 하위수준에 여러개의 클래스를 포함하면서 중재하며 하위 수준의 여러개의 클래스의 의존성을 줄이는데 사용된다. 하위 수준의 클래스를 캡슐화 함으로써 의존성을 줄일수 있다.
 	![image]({{ site.url }}{{ site.baseurl }}/assets/images/2019-09-27-book-cpp-api-design-ch02-001.png)
+
 	* 는 아래처럼 변경하자
+
 	![image]({{ site.url }}{{ site.baseurl }}/assets/images/2019-09-27-book-cpp-api-design-ch02-002.png)
 * 2.5.5 콜백과 옵저버, 알림
 	* 콜백, 저수준의 코드가 고수준의 코드를 호출할때 콜백을 사용하면 의존성을 만들지 않기에 유용함.
@@ -107,7 +109,6 @@ void *mClosure;
 };
 ```
 	* 이러면 이렇게 호출 가능하다
-
 
 ```cpp
 if (mCallback)
