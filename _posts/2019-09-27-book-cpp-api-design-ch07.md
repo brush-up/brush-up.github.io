@@ -46,6 +46,7 @@ published: true
 	};
 	```
 	* 이것보다는 
+
 	```cpp
 	class Avatar
 	{
