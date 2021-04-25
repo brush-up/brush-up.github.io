@@ -72,6 +72,7 @@ published: true
 * 2.5 느슨한 연결
 * 2.5.1 이름만을 사용한 연결
 	* #include 문을 사용해서 클래스의 전체 선언을 참조할 필요가 없담녀 전방 선언을 사용해라.
+
 ```cpp
 class A
 class B
@@ -91,6 +92,7 @@ class B
 	![image]({{ site.url }}{{ site.baseurl }}/assets/images/2019-09-27-book-cpp-api-design-ch02-002.png)
 * 2.5.5 콜백과 옵저버, 알림
 	* 콜백, 저수준의 코드가 고수준의 코드를 호출할때 콜백을 사용하면 의존성을 만들지 않기에 유용함.
+
 ```cpp
 #include <string>
 class ModuleB
@@ -105,6 +107,8 @@ void *mClosure;
 };
 ```
 	* 이러면 이렇게 호출 가능하다
+
+
 ```cpp
 if (mCallback)
 {
