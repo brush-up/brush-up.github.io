@@ -15,6 +15,7 @@ last_modified_at: 2019-09-27
 
 published: false
 ---
+# CHAPTER 03 패턴
 
 * 3.1 Pimpl 이디엄
 	* 이 용어는 pointer to implementation(구현포인터)라는 말의 약자
