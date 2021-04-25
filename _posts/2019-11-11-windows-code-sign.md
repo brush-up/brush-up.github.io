@@ -122,7 +122,7 @@ published: true
 
 --- 
 
-**osslsigncode**
+*osslsigncode*
 
 * https://github.com/mtrojnar/osslsigncode 에서 소스를 다운 받자.
 * 아래 순서로 설치해보자.
@@ -134,6 +134,7 @@ published: true
 ```
 * 다시
 ![image]({{ site.url }}{{ site.baseurl }}/assets/images/2019-11-11-windows-code-sign-009.png)
+
 ![image.png](/files/2607213392868442433)
 ![image.png](/files/2607213605816941504)
 경로가 꼬임.. 하지만 설치는 됨.
