@@ -103,9 +103,11 @@ published: true
 
 ### 그래! 설치는 build를 직접 해야 제맛
 * 아마 curl, libssh2, gcc, GNU Autotools 는 설치가 되어있을듯
---- 
-**openssl**
-아래 순서로 설치하자. gcc까지 설치할 일이 없길.(root 권한 필요할지도.)
+
+*****
+ 
+* openssl
+	* 아래 순서로 설치하자. gcc까지 설치할 일이 없길.(root 권한 필요할지도.)
 ```
 #wget https://www.openssl.org/source/openssl-1.1.0g.tar.gz 
 #tar xvfz openssl-1.1.0g.tar.gz
@@ -118,9 +120,9 @@ published: true
 ![image]({{ site.url }}{{ site.baseurl }}/assets/images/2019-11-11-windows-code-sign-007.png)
 * 이하 생략...
 * 설치완료
-![image]({{ site.url }}{{ site.baseurl }}/assets/images/2019-11-11-windows-code-sign-008.png)
+	![image]({{ site.url }}{{ site.baseurl }}/assets/images/2019-11-11-windows-code-sign-010.png)
 
---- 
+***** 
 
 *osslsigncode*
 
