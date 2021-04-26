@@ -28,6 +28,7 @@ last_modified_at: 2020-09-28
     * 함수포인터는 인라인은 아니니..
 * 예제
     * C++
+
     ``` c++
     //ex1
     template<typename F>
@@ -46,6 +47,7 @@ last_modified_at: 2020-09-28
     }
     ```
     * java
+
     ``` java
     Predicate<Integer> pred = x -> x % 2 == 0; // Tests if the parameter is even.
     boolean result = pred.test(4); // true
@@ -125,6 +127,7 @@ Comparator<T>
         * 함수형 인터페이스에 Functional Interface 어노테이션이 필수는 아니지만, 이 어노테이션은 컴파일 단계에서 mehtod가 하나만 선언되어있는지 확인해준다.
 ### Runnable
 * 매개변수 없고, 리턴값도 없다.
+
 ``` java
 package java.lang;
 
@@ -134,6 +137,7 @@ public interface Runnable {
 }
 ```
 * 람다 사용하지 않고 사용시
+
 ``` java
 Runnable task01 = new Runnable() {
     @Override
@@ -145,6 +149,7 @@ Thread thread01 = new Thread(task01);
 thread01.start();
 ```
 * 람다 사용했을시
+
 ``` java
 Runnable task02 = () ->  System.out.println("================lambda================");
 Thread thread02 = new Thread(task02);
@@ -153,6 +158,7 @@ thread02.start();
 
 ### Supplier < T >
 * 인자는 받지 않고 리턴 타입만 존재한다.
+
 ``` java
 package java.util.function;
 
@@ -162,6 +168,7 @@ public interface Supplier<T> {
 }
 ```
 * 람다 사용 예시
+
 ``` java
 Supplier<String> supplier01 = () -> "test";
 System.out.println("================lambda================" + supplier01.get());
@@ -170,6 +177,7 @@ System.out.println("================lambda================" + supplier01.get());
 ###  Consumer < T >
 * T 타입의 인자는 받고, 리턴은 하지 않는다
 * andThen이라는 디폴트 메서드를 제공한다.
+
 ``` java
 @FunctionalInterface
 public interface Consumer<T> {
@@ -185,6 +193,7 @@ public interface Consumer<T> {
 }
 ```
 * 람다 사용 예시
+
 ``` java
 Consumer<String> consumer = (s) -> System.out.println("=====lambda================" + s);
 consumer.accept("");
@@ -193,6 +202,7 @@ consumer.accept("");
 
 ###  Function < T, R >
 * 매개변수가 있고, 리턴 값도 있는 경우이다.
+
 ``` java
 @FunctionalInterface
 public interface Function<T, R> {
@@ -221,6 +231,7 @@ public interface Function<T, R> {
 ```
 * 람다 예시
     * 매개변수로 전달받은 String을 대문자로 변환해주는 아주 간단한 기능의 함수를 작성해
+
 ``` java
     Function<String, String> function = (s)-> s.toUpperCase();
     System.out.println("================lambda================" + function.apply("abc"));
@@ -228,6 +239,7 @@ public interface Function<T, R> {
 
 ### Predicate < T >
 * T 타입의 매개변수를 받고, boolean를 리턴한다. Function\<T, Boolean> 와 같은 기능을 한다고 생각해도 된다
+
 ``` java
     Predicate<String> predicate = (s)->s.startsWith("e");
     System.out.println("================lambda================" + predicate.test("abc"));
