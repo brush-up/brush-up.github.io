@@ -88,7 +88,6 @@ System.out.println(response.body());
 
 * 비동기 방식 호출
     * HttpResponse 가 사용 가능해지면 CompletableFuture와 함께 즉시 반환됨 CompletableFuture는 java8에 추가되었으면 비동기프로그래밍을 지원한다.
-    * [게임플랫폼서버팀-스터디관련/31 (몰라도 상관없지만, 알면 매우 좋은) CompletableFuture 의 실전 사용법](dooray://1387695619080878080/tasks/2349067407574791943 "registered")내용 알아야 이해 가능함.
 
 ``` java
 client.sendAsync(request, BodyHandlers.ofString())
