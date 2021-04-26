@@ -237,6 +237,7 @@ published: false
         * java 명세에 즉시 실행되야한다고 없고, 반드시 실행되야한다는 문구도 없다.
     * 프로그램 성능이 심각하게 떨어진다. 
     * 명시적 종료 메서드는 try-finally 문과 함께 쓰자
+
     ```java
     Foo foo = new foo
     try{
