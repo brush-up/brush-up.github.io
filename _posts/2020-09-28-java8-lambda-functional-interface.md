@@ -264,7 +264,6 @@ public static Integer getTest1(String a, TestInterFace4<String, Integer> b){
 public static Integer getTest2(String a, Function<String, Integer> b){
     return b.apply(a);
 }
-//https://nhnent.dooray.com/project/posts/2789822747730797200   규칙 18번 이후의 내용?  기본으로 제공하는 함수형 인터페이스를 사용하는 것을 권장한다
 .
 .
 .
@@ -290,9 +289,9 @@ Integer c = getTest2("abc", s->s.length());
 
 ## 참고
 
-[https://en.wikipedia.org/wiki/Functional\_programming](https://en.wikipedia.org/wiki/Functional_programming)
-[https://en.wikipedia.org/wiki/Lambda\_calculus](https://en.wikipedia.org/wiki/Lambda_calculus)
-[https://www.geeksforgeeks.org/lambda-expressions-java-8/](https://www.geeksforgeeks.org/lambda-expressions-java-8/)
-[https://brunch.co.kr/@springboot/276](https://brunch.co.kr/@springboot/276)
+* [https://en.wikipedia.org/wiki/Functional\_programming](https://en.wikipedia.org/wiki/Functional_programming)
+* [https://en.wikipedia.org/wiki/Lambda\_calculus](https://en.wikipedia.org/wiki/Lambda_calculus)
+* [https://www.geeksforgeeks.org/lambda-expressions-java-8/](https://www.geeksforgeeks.org/lambda-expressions-java-8/)
+* [https://brunch.co.kr/@springboot/276](https://brunch.co.kr/@springboot/276)
 
 
