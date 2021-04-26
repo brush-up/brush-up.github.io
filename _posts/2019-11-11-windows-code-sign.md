@@ -169,13 +169,13 @@ published: true
 ![image]({{ site.url }}{{ site.baseurl }}/assets/images/2019-11-11-windows-code-sign-016.png)
 * 첨부파일 설명 (code sign.zip 압축 풀면 아래와 같이 나온다.)
     * Sample.exe : 원본 파일(코드사인 미적용)
-    ![image.png](/files/2608090439412741656)
-    * sample_1.exe : 현재 CDA로 생성한 파일
-    ![image.png](/files/2608091494706182323)    
+    ![image]({{ site.url }}{{ site.baseurl }}/assets/images/2019-11-11-windows-code-sign-017.png)
+    * sample_1.exe : windows 에서 배포한 툴로 코드사인한 파일
+    ![image]({{ site.url }}{{ site.baseurl }}/assets/images/2019-11-11-windows-code-sign-018.png)    
     * sample_2.exe: 테스트 삼아 리눅스에서 코드사인 한 파일
-    ![image.png](/files/2608092105709704021)
+    ![image]({{ site.url }}{{ site.baseurl }}/assets/images/2019-11-11-windows-code-sign-019.png)
     * sample_3.exe : 교차인증서(MSCV_COMODOAddTrust.crt)추가해서 코드사인 한 파일
-    ![image.png](/files/2608093019507661494)
+    ![image]({{ site.url }}{{ site.baseurl }}/assets/images/2019-11-11-windows-code-sign-020.png)
 
 
 ---
@@ -195,10 +195,8 @@ published: true
 * CAB 파일 코드 사이닝 하기
 
 ## 기타
-* 이 내용 참고하기
-    * [게임플랫폼서버팀/117 RE: RE: &#91;한게임&#93; sha256 신규 인증서 관련하여 문의 드립니다.](dooray://1387695619080878080/tasks/2607178472376016725 "closed")
 * 리눅스 파일 복사. 
     * 당겨오기
-scp irteamsu@hsptst-mvx904:/home1/irteamsu/yuik_test/Sample-signed.exe /home1/yuik/test_CDA/
+scp id@server:/home1/test/Sample-signed.exe /home1/test_TARGET/
     * 밀어넣기
-    scp ./osslsigncode-master.zip irteamsu@hsptst-mvx904:/home1/irteamsu/yuik_test
+    scp ./osslsigncode-master.zip id@server:/home1/test
