@@ -24,6 +24,7 @@ published: true
 * 규칙 1 생성자 대신 정적 팩터리 메소드를 사용할 수 없는지 생각해 보라
     * 정적 팩터리 메소드
         * 객체를 생성자가 아닌, 정적 메서드를 이용해서 객체를 생성, 반환하는 것을 말한다.
+
         ```java
         //예제
         class Monitor {
@@ -523,6 +524,7 @@ published: true
         * 자바의 enum은 완전한 기능을 갖춘 클래스다. (다른 언어는 결국 int값이다.)
         * 열거 상수 (enumeration constant)별로 하나의 객체를 public static final 필드 형태로 제공하는 것이다.
         * 임의의 메서드나 필드도 추가할수 있다?
+
     ```java
     //데이터와 연산을 구비한 enum 자료형
     public enum Planet {
@@ -542,6 +544,7 @@ published: true
     * 요약하면 enum 자료형은 int 상수에 비해 가독성도 높고, 안전하고, 더 강력하다. 
 
 * 규칙 31 ordinal 대신 객체 필드를 사용하라
+
     ```java
     // ordinal을 남용한 사례 - 따라하면 곤란
     public enum Ensemble {
