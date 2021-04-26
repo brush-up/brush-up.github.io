@@ -34,9 +34,10 @@ published: true
 ```
 
 ### 각 파일의 내용
-* .start.bat
+* start.bat
     * 시작점
-```ps
+
+```dos
 @echo on
 cd C:\Script
 
@@ -47,7 +48,8 @@ powershell "& { Set-ExecutionPolicy Restricted } "
 
 * netstat.ps1
     * WAIT_MAX_COUNT 보다 큰 숫자일 경우 잘 잘 처리하기 위해서.
-```ps
+
+```dos
 
 . .\Util\printmsg.ps1
 . .\Util\sendmail.ps1
@@ -76,7 +78,8 @@ exit
 
 * printmsg.ps1
     * 특정위치에 로깅을 위한 용도.
-```ps
+
+```dos
 $log_folder = "C:\Script\Log"
 $today = (Get-Date).AddDays(0).ToString("yyyyMMdd")
 
@@ -98,7 +101,8 @@ Function PrintMsg ([string] $msg) {
 
 * webhook.ps1
     * 특정 url에 post방식으로 body에 특정 json 데이터를 보낸뒤 결과값을 출력하기 위한 용도
-```ps
+
+```dos
 $hostname = HOSTNAME
 $URL = "https://.....";
 
