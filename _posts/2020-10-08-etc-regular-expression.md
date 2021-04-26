@@ -61,12 +61,12 @@ published: true
 ## 여러 하위 표현식 중 하나를 찾는 방법
 * 둘중 아무 문자열과 매칭하기 위해선 `|` 를 이용하면 된다
     * grey, gray 2개중 아무거나 찾기 위해선
-        * gr[ea]y  나 gray | grey  나 gr(a | ey) 라고 표현 할수 있다. 
+        * gr[ea]y  나 gray `|` grey  나 gr(a `|` ey) 라고 표현 할수 있다. 
             * 괄호를 쓰지 않고 사용하면 다른 문자열 로 인식하기 때문에 괄호를 사용해야한다.
             * 아래는 얼추 같다
-                * Jeffrey | Jeffery
-                * Jeff(rey | ery)
-                * Jeff(re | er)y
+                * Jeffrey `|` Jeffery
+                * Jeff(rey `|` ery)
+                * Jeff(re `|` er)y
 
 ## 대소문자 무시하는 법
 * egrep 실행시 옵션 `-i` 를 주게되면 무시하게 된다
@@ -79,7 +79,7 @@ published: true
     * u가 있고 없고인데, 이 경우는 colo`u?`r 을 하면 둘다 찾을 수 있다 
     * ? 메타 문자는 옵션을 의미한다. 
     * ?는 바로 앞의 아이템에만 적용이 된다. 
-    * July | Jul 은 July? 로 줄여서 쓸수있다.
+    * July `|` Jul 은 July? 로 줄여서 쓸수있다.
 
 ## 기타 수량자 : 반복
 * `+`
