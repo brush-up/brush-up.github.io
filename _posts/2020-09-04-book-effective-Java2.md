@@ -14,10 +14,8 @@ date: 2020-09-04
 last_modified_at: 2020-09-04
 
 
-published: true
+published: false
 ---
-
-
 
 ## 1장 서론
 ## 2장 객체의 생성과 삭제
