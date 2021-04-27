@@ -35,7 +35,7 @@ published: true
 
 ### 각 파일의 내용
 * start.bat
-    * 시작점
+    * 실행시킬  bat 파일
 
 ```dos
 @echo on
