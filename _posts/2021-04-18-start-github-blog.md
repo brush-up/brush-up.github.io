@@ -177,6 +177,16 @@ defaults:
       share: true # 포스트 공유 기능을 활성화 할것인지. 개인적으로 별로..
       related: true
 ```
+* 블로그 소유등을 확인하기 위한 작업
+	* head에 정보 심기
+		* _includes\head\custom.html 에 내용을 추가하면  head tag사이에 특정 정보를 넣을수있다.
+	* 최상위 path에 특정 데이터 접근 가능하게 하기
+		* 최상위 path(index.html이 존해하는 곳)에 robots.txt등을 구성해 놓으면  https://brush-up.github.io/robots.txt 로 접근이 가능하다.
+*  검색 엔진에 등록하기
+	* 구글 서치
+		* https://search.google.com/search-console
+	* 네이버 서치
+		* https://searchadvisor.naver.com/console/board
 
 
 ## 참고
