@@ -1,2 +1,3 @@
 User-agent: *
 Allow: /
+Sitemap: https://brush-up.github.io/sitemap.xml
