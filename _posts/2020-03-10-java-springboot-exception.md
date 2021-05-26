@@ -21,6 +21,7 @@ published: true
 # intro
 ## springboot 에서 기본적인 예외처리
 * 존재하지 않는 페이지로 요청했을때 기본적으로 아래와 같이 응답값을 내려준다
+
 ```
 Whitelabel Error Page
 This application has no explicit mapping for /error, so you are seeing this as a fallback.
