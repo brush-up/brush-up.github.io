@@ -31,6 +31,7 @@ No message available
 ```
 
 * 또한 Content-Type을 application/json 로 한경우는 아래처럼 에러를 내려준다.
+
 ```json
 {
 "timestamp": 1621218625595,
