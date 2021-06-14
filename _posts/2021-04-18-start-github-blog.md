@@ -196,3 +196,4 @@ defaults:
 * 참고중
   * https://ansohxxn.github.io/categories/#blog
   * https://devinlife.com/howto%20github%20pages/category-tag/
+  * https://seungwubaek.github.io/blog/google_adsense/
