@@ -156,3 +156,6 @@ public class TestExceptionHandler{
     * https://www.baeldung.com/exception-handling-for-rest-with-spring
 * 이것 더 봐야함
     * https://supawer0728.github.io/2019/04/04/spring-error-handling/
+	* 테스트 관련 아래 사항 더 보기
+		* https://jaehun2841.github.io/2018/08/30/2018-08-25-spring-mvc-handle-exception/#test-case
+		* https://sanghye.tistory.com/29
