@@ -1,6 +1,6 @@
 ---
-title:  "[java][작성중]Spring Boot + Ehcache 예제 정리중"
-excerpt: "Spring Boot + Ehcache 예제 정리중 "
+title:  "[java][작성중]Spring boot에서 Redirect와 Forward 를 이용해 보자"
+excerpt: "Spring boot에서 Redirect와 Forward 를 이용해 보자"
 
 categories:
   - Java
@@ -10,8 +10,8 @@ tags:
 toc: true
 toc_sticky: true
  
-date: 2020-02-17
-last_modified_at: 2020-02-17
+date: 2020-03-09
+last_modified_at: 2020-03-09
 
 published: true
 ---
