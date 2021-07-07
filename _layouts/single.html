@@ -37,6 +37,9 @@ layout: default
             <nav class="toc">
               <header><h4 class="nav__title"><i class="fas fa-{{ page.toc_icon | default: 'file-alt' }}"></i> {{ page.toc_label | default: site.data.ui-text[site.locale].toc_label | default: "On this page" }}</h4></header>
               {% include toc.html sanitize=true html=content h_min=1 h_max=6 class="toc__menu" skip_no_ids=true %}
+				<!-- 광고모듈 삽입 START -->
+				<nav class="toc-custom">{% include GoogleAdSenseSidbar.html %}</nav>
+				<!-- 광고모듈 삽입 END -->
             </nav>
           </aside>
         {% endif %}
