@@ -47,6 +47,7 @@ public class Sample {
 
 * json 데이타를 java object 로 변환
     * File, URL, String 방식으로 데이타를 읽어올 수 있음.
+
 ```java
 ObjectMapper mapper = new ObjectMapper();
 .
@@ -58,7 +59,8 @@ value = mapper.readValue(new URL("http://sample.com/data.json"), Sample.class);
 value = mapper.readValue("{\"data1\":\"ex1\", \"data2\":100}", Sample.class);
 ```
 
-* java object 를 json 으로 변환
+* java object 를 json 으로 변환.
+
 ```java
 Sample sample = new Sample();
 sample.data1 = "ex1";
