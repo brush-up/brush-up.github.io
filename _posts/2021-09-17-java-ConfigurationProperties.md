@@ -49,8 +49,8 @@ public class ConfigProperties {
     * 아래처럼 설정 가능하다
     ```
     mail:
-      a: 
-      b: 
+      a: xxxxxx 
+      b: xxxxxx 
     ```
 
 * Spring framework는 표준 Java bean setter를 사용하므로 각 속성에 대한 setter를 선언해야 한다.
