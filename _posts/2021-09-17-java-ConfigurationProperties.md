@@ -49,8 +49,8 @@ public class ConfigProperties {
     * 아래처럼 설정 가능하다
     ```
     mail:
-      a:
-      b:
+      a: 
+      b: 
     ```
 
 * Spring framework는 표준 Java bean setter를 사용하므로 각 속성에 대한 setter를 선언해야 한다.
@@ -90,6 +90,7 @@ mail.HOST_NAME
     
 ### 중첩속성
 * 아래같은 경우
+
 ```java
 public class Credentials {
     private String authMethod;
@@ -107,6 +108,7 @@ public class ConfigProperties {
 }
 ```
 * 아래와 같은 설정이 된다.
+
 ```
 #Simple properties
 mail.hostname=mailer@mail.com
