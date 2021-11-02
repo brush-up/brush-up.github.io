@@ -158,6 +158,7 @@ IntStream.of(14, 11, 20, 39, 23)
 // [11, 14, 20, 23, 39]
 ```
 * 인자를 넘기는 경우와 비교해보겠습니다. 스트링 리스트에서 알파벳 순으로 정렬한 코드와 Comparator 를 넘겨서 역순으로 정렬한 코드입니다.
+
 ```java
 List<String> lang = 
   Arrays.asList("Java", "Scala", "Groovy", "Python", "Go", "Swift");
