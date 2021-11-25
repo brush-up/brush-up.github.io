@@ -26,6 +26,7 @@ org.springframework.boot.env.EnvironmentPostProcessor=com.example.YourEnvironmen
 ```
 
 * 코드 샘플 
+
 ```java
 public class EnvironmentPostProcessorExample implements EnvironmentPostProcessor {
 
@@ -61,8 +62,10 @@ public class EnvironmentPostProcessorExample implements EnvironmentPostProcessor
 
 }
 ```
+
 * 각 Properties class와 properties를 만들어 보자. 
     * sample/test1.yaml, sample/test2.yaml 샘플은 포함안함.
+
 ```java
 @Data
 @Component
