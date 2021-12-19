@@ -77,15 +77,17 @@ AsyncHttpClient 를 생성하면 항상 새로운 thread와 connectio pool이 �
 
 
 ### unbound 요청
-    * RequestBuilder class사용해서 만들거나 Dsl 클래스를 사용해서 할수 있다.
-    ```java
-    Request getRequest = new RequestBuilder(HttpConstants.Methods.GET)
-      .setUrl("https://www.google.com")
-      .build();
-    // or  
-    Request getRequest = Dsl.get("https://www.google.com").build()
-    ```
+* RequestBuilder class사용해서 만들거나 Dsl 클래스를 사용해서 할수 있다.
+```java
+Request getRequest = new RequestBuilder(HttpConstants.Methods.GET)
+  .setUrl("https://www.google.com")
+  .build();
+// or  
+Request getRequest = Dsl.get("https://www.google.com").build()
+```
+
 * 호출까지 수행하는 하는 예제
+
 ```java
 import org.asynchttpclient.*;
 // bound
@@ -281,6 +283,81 @@ AsyncHttpClient httpClient = asyncHttpClient(config()
     .setNettyTimer(timer)
     .setChannelPool(pool)
 );
+```
+
+* 설정 샘플 예제
+	* 아래내용 참고
+    * https://github.com/AsyncHttpClient/async-http-client/blob/master/client/src/main/resources/org/asynchttpclient/config/ahc-default.properties
+
+```java
+public class AsyncHttpProperties {
+
+    private int connectTimeout = 1000 * 5;
+    private int requestTimeout = 1000 * 5;
+    private int pooledConnectionIdleTimeout = 1000 * 60;
+    private Integer connectionPoolCleanerPeriod;
+    private boolean keepAlive = true;
+    private int maxConnections = -1;
+    private int maxConnectionsPerHost = -1;
+    private String threadPoolName = "AsyncHttpClient";
+    private boolean useNativeTransport = false; // Native Epool
+    private int ioThreadsCount = 0; // async worker count. 0 = cpu x 2
+
+    private Integer connectionTtl; // millis
+
+    public AsyncHttpProperties(AsyncHttpProperties properties) {
+        this.connectTimeout = properties.getConnectTimeout();
+        this.requestTimeout = properties.getRequestTimeout();
+        this.keepAlive = properties.isKeepAlive();
+        this.maxConnections = properties.getMaxConnections();
+        this.maxConnectionsPerHost = properties.getMaxConnectionsPerHost();
+        this.threadPoolName = properties.getThreadPoolName();
+        this.useNativeTransport = properties.isUseNativeTransport();
+        this.pooledConnectionIdleTimeout = properties.getPooledConnectionIdleTimeout();
+        this.connectionPoolCleanerPeriod = properties.getConnectionPoolCleanerPeriod();
+        this.ioThreadsCount = properties.getIoThreadsCount();
+        this.connectionTtl = properties.getConnectionTtl();
+    }
+}
+```
+
+```java
+public AsyncHttpClient create(AsyncHttpProperties asyncHttpProperties) {
+        DefaultAsyncHttpClientConfig.Builder configBuilder = new DefaultAsyncHttpClientConfig.Builder();
+
+        configBuilder.setFollowRedirect(true);
+
+        //
+        configBuilder.setConnectTimeout( asyncHttpProperties.getConnectTimeout() ); // 
+        configBuilder.setRequestTimeout( asyncHttpProperties.getRequestTimeout() ); // 
+
+        // keep-alvie
+        configBuilder.setKeepAlive( asyncHttpProperties.isKeepAlive() );
+        configBuilder.setPooledConnectionIdleTimeout( 1000 * 60 * 5 );
+        configBuilder.setMaxConnections( asyncHttpProperties.getMaxConnections() );
+        configBuilder.setMaxConnectionsPerHost( asyncHttpProperties.getMaxConnectionsPerHost() );
+
+        // tuning
+        configBuilder.setTcpNoDelay(true);
+        configBuilder.setSoReuseAddress(true);
+
+        // internals
+        configBuilder.setThreadPoolName( asyncHttpProperties.getThreadPoolName() );
+        configBuilder.setUseNativeTransport( asyncHttpProperties.isUseNativeTransport() ); // true: Linux 에서 Epoll 사용
+        configBuilder.setIoThreadsCount( asyncHttpProperties.getIoThreadsCount() ); // 
+        //
+        configBuilder.setPooledConnectionIdleTimeout( asyncHttpProperties.getPooledConnectionIdleTimeout() );
+        if (asyncHttpProperties.getConnectionPoolCleanerPeriod() != null)
+            configBuilder.setConnectionPoolCleanerPeriod( asyncHttpProperties.getConnectionPoolCleanerPeriod() );
+
+        //
+        if (asyncHttpProperties.getConnectionTtl() != null)
+            configBuilder.setConnectionTtl( asyncHttpProperties.getConnectionTtl() );
+
+        log.info("Create asyncHttpClient configuration:{}", asyncHttpProperties.toString());
+
+        return new DefaultAsyncHttpClient(configBuilder.build());
+    }
 ```
 
 * 아래 정보는 더 보기.
