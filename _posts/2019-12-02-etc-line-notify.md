@@ -36,6 +36,7 @@ last_modified_at: 2019-12-02
 
 ## Step4
 * 아래 API 가이드에 따라 코드를 만들어 보자
+
 ```
 Notification
 
@@ -55,6 +56,7 @@ The host name for notification API end point is notify-api.line.me.
 # 샘플코드
 ## 메시지만 손쉽게 보내기 위해서 
 * `Content-Type:application/x-www-form-urlencoded` 사용하는 간략화한 샘플코드
+
 
 ```c++
 size_t CallbackRecvHeader( void* recvp, size_t size, size_t nmemb, void* userp )
