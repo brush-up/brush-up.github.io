@@ -385,7 +385,7 @@ public class LombokTest{
     4. 기본값은 public이지만 필요로 따라서 접근제한자를 설정해주어야 합니다.
  
  
- ## @TOSTRING
+## @TOSTRING
 
 * 이 annotation은  toString 메서드의 구현을 생성한다.
 * 기본적으로 모든 non-static 필드는 이름-값 쌍의 메서드 출력에 포함됩니다. includeFieldNames 원하는 경우 주석 매개변수 를  로 false 로 설정하여 출력에 속성 이름이 포함되지 않도록 할 수 있다.
