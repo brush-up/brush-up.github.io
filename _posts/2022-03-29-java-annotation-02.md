@@ -39,6 +39,7 @@ last_modified_at: 2022-03-29
         void activeService();
     }
     ```
+
     ```java
     @Component
     public class AdminServiceImpl implements AdminService {
@@ -50,6 +51,7 @@ last_modified_at: 2022-03-29
 
     }
     ```
+
     ```java
     public class AdminController {
 
@@ -66,6 +68,7 @@ last_modified_at: 2022-03-29
 
     }
     ```
+
 * @Primary, @Qualifier
     * @Primary : @Bean 혹은 @Component와 함께 사용하며 객체 생성의 우선권을 부여
     * @Quallifier : @Autowired와 함께 사용하며 Bean 의 이름이 같은 객체를 찾음
