@@ -120,6 +120,7 @@ public class TestCode {
 * 필드에 @Autoried 어노테이션을 붙이면 된다.
     * 생성자 주입과 달리 필드를 final로 정의하지 못한다
     * 같은 타입의 빈이 있을 경우 @Qaualifer이나 @Resource 를 통해 빈의 이름으로 가져와서 주입할수 있다.
+
 ```java
 @Component
 public class TestCode {
@@ -133,6 +134,7 @@ public class TestCode {
 ### 수정자 주입
 * 이 방식도 final 선언이 안된다. 
 * 꼭 setter 메서드일 필요없이 메서드 이름이 수정자 네이밍 패텅이 아니어도 동일 기능을 하면 된다.
+
 ```java
 @Component
 public class TestCode {
@@ -190,6 +192,7 @@ public class TestCode {
 * @RestController
     * @Controller와 @ResponseBody의 조합
     * 다음 두 코드는 Spring MVC에서 동일한 동작
+
     ```java
     @Controller
     @ResponseBody
@@ -202,6 +205,7 @@ public class TestCode {
         logic...
     }
     ```
+
     * json 으로 응답보내기 위한 어노테이션
     * 하위의 메소드들은 전부 @ResponseBody 가 적용됨
 * @ResponseBody
