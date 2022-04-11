@@ -427,6 +427,7 @@ public void putIfAbsent() {
 ```
 
 ### computeIfAbsent
+
 ```java
 default V computeIfAbsent(K key, Function<? super K, ? extends V> mappingFunction)
 ```
@@ -483,6 +484,7 @@ public void compute() {
 ```
 
 ### computeIfPresent
+
 ```java
 default V compute(K key,
                   BiFunction<? super K, ? super V, ? extends V> remappingFunction)
@@ -493,6 +495,7 @@ default V compute(K key,
         * remappingFunction 람다 함수 실행 결과로 value 값이 업데이트가 된다
     * key가 존재하지 않는 경우
         * null을 반환한다
+
 ```java
 @Test
 public void computeIfPresent() {
@@ -510,6 +513,7 @@ public void computeIfPresent() {
 ```
 
 ### merge
+
 ```java
 default V merge(K key, V value, BiFunction<? super V, ? super V, ? extends V> remappingFunction)
 ```
@@ -521,6 +525,7 @@ default V merge(K key, V value, BiFunction<? super V, ? super V, ? extends V> re
         * map에서 해당 key를 삭제한다
 * key가 존재하지 않는 경우
     * Map에 key, value값이 추가된다
+
 ```java
 @Test
 public void merge() {
@@ -545,8 +550,10 @@ public void merge() {
 
 }
 ```
+
 ## getOrDefault()
 * getOrDefault 가 반환하는 값은 아래와 같습니다.
+
 ```java
 default V getOrDefault(Object key, V defaultValue)
 ```
