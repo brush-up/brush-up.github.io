@@ -45,6 +45,7 @@ last_modified_at: 2022-05-26
 * TCP/IP 프로토콜에서 전송을 담당하는 프로토콜. IP는 신뢰성이 없고 비연결 지향적이며 목적지까지 패킷을 전달하기 위해 최선을 다한다.
     * 전달 과자ㅓㅇ에 문제가 발생할수있다는 것을 가정하고 최선을 다하지만, 결과는 보장하지 못한다. 
 * IP 데이터그램 구조
+
 ![image]({{ site.url }}{{ site.baseurl }}/assets/images/2022-05-26-etc-network-03.png)
 
 ### TCP
@@ -168,7 +169,9 @@ last_modified_at: 2022-05-26
     *  EX) ping 명령어 실행 도중 Ctrl+c 입력
 
 ### Connection Establishment
+
 * ![image]({{ site.url }}{{ site.baseurl }}/assets/images/2022-05-26-etc-network-11.png)
+
 1) 클라이언트에서 서버에 SYN 패킷을 보내고 SYN_SENT 상태가 됩니다.
 2) 서버는 클라이언트로부터 SYN를 받고 응답 패킷 ACK과 SYN 패킷을 패킷을 보냅니다. 상태는 LISTEN에서 SYS-SENT로 바뀝니다.
 3) 클라이언트는 받은 패킷에 대한 응답으로 ACK 패킷을 보내고 상태는 ESTABLISHED가 됩니다.
@@ -215,6 +218,7 @@ sighandler_t signal(int signum, sighandler_t handler);
 
 ### thread 관련
 * pthread 기본 API
+
 ```c++
 #include <pthread.h>
 
@@ -232,6 +236,7 @@ void pthread_exit(void *retval);
 ```
 * thread 동기화 관련 API
 * 뮤텍스(mutex)
+
 ```c++
 #include <pthread.h>
 int pthread_mutex_init(pthread_mutex_t *mutex, const pthread_mutexattr_t *mutexattr);
@@ -240,6 +245,7 @@ int pthread_mutex_unlock(pthread_mutex_t *mutex);
 int pthread_mutex_destory(pthread_mutex_t *mutex);
 ```
 * 세마포어(semaphore)
+
 ```c++
 #include <semaphore.h>
 int sem_init(sem_t *sem, int pshared, unsigned int value);
@@ -311,6 +317,7 @@ close()             close()
 ## 소켓 연결 종료
 ### half-close
 * 아래와 같은 기능을 shutdown 함수는 제공해줌
+
 ```c++
 #include <sys/socket.h>
 int shutdown(int s, int how);
@@ -359,8 +366,8 @@ int shutdown(int s, int how);
         * 2. 블로킹되지 않고 데이터의 전송이 가능한 소켓이 있는가? (write)
         * 3. 예외상황이 발생한 소켓은 무엇인가? (except)
 * 파일 디스크립터 관련 기억 리마인드용(1024개의 배열)
-    * ![image]({{ site.url }}{{ site.baseurl }}/assets/images/2022-05-26-etc-network-14.png)
-    * ![image]({{ site.url }}{{ site.baseurl }}/assets/images/2022-05-26-etc-network-15.png)
+![image]({{ site.url }}{{ site.baseurl }}/assets/images/2022-05-26-etc-network-14.png)
+![image]({{ site.url }}{{ site.baseurl }}/assets/images/2022-05-26-etc-network-15.png)
 
 
 ## 멀티캐스트(Multicast)
@@ -375,6 +382,7 @@ int shutdown(int s, int how);
 * 뮤텍스(mutex)
     * Mutual Exclusion 의 줄입말
         * thread 간에 동시 접근을 허용하지 않겠다라는 의미
+
 ```c++
 #include <pthread.h>
 int pthread_mutex_init(pthread_mutex_t *mutex, const pthread_mutexattr_t *mutexattr);
@@ -382,7 +390,9 @@ int pthread_mutex_lock(pthread_mutex_t *mutex);
 int pthread_mutex_unlock(pthread_mutex_t *mutex);
 int pthread_mutex_destory(pthread_mutex_t *mutex);
 ```
+
 * 세마포어(semaphore)
+
 ```c++
 #include <semaphore.h>
 int sem_init(sem_t *sem, int pshared, unsigned int value);
