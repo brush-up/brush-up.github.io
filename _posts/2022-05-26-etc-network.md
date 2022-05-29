@@ -23,7 +23,9 @@ last_modified_at: 2022-05-26
     * IP주소를 물리주소로 변환하기 위해 사용되는 프로토콜
         * 패킷은 물리 조소에 의해 다음 목적지를 찾아가고 IP 주소에 의해 최종 목적지로 찾아간다. 
 * ARP 패킷 구조
-* ![image]({{ site.url }}{{ site.baseurl }}/assets/images/2022-05-26-etc-network-01.png)
+
+![image]({{ site.url }}{{ site.baseurl }}/assets/images/2022-05-26-etc-network-01.png)
+
 * 작동 방식
     * 1. 출발지 시스템에 ARP Cache Table에 목적지 MAC 주소가 있는지 확인한다.
     * 2. MAC 주소가 없으면 ARP request 브로드캐스트로 패킷을 보낸다.
@@ -33,7 +35,9 @@ last_modified_at: 2022-05-26
 ### ICMP
 * internet control message protocol 은 네트워크 내에 발생하는 여러가지 문제 제어를 위한 프로토콜이다. 
     * 대표적인 예가 Ping 패킷이다. 
-* ![image]({{ site.url }}{{ site.baseurl }}/assets/images/2022-05-26-etc-network-02.png)
+
+![image]({{ site.url }}{{ site.baseurl }}/assets/images/2022-05-26-etc-network-02.png)
+
 * ICMP는 크게 가지지로 나뉜다.
     * 오류보고 메시지
         * 라우터나 호스트가 패킷을 처리하는데 있어 문제가 발생할 경우 보내는 메시지
@@ -65,7 +69,7 @@ last_modified_at: 2022-05-26
 ![image]({{ site.url }}{{ site.baseurl }}/assets/images/2022-05-26-etc-network-06.png)
 
 * 패킷 비교
-	* ![image]({{ site.url }}{{ site.baseurl }}/assets/images/2022-05-26-etc-network-07.png)
+![image]({{ site.url }}{{ site.baseurl }}/assets/images/2022-05-26-etc-network-07.png)
 
 
 ## TCP, UDP
@@ -79,7 +83,8 @@ last_modified_at: 2022-05-26
 
 
 ## TCP 상태 전이 
-* ![image]({{ site.url }}{{ site.baseurl }}/assets/images/2022-05-26-etc-network-08.png)
+![image]({{ site.url }}{{ site.baseurl }}/assets/images/2022-05-26-etc-network-08.png)
+
 * TIME_WAIT 이해하기
     * TIME_WAIT 이란 TCP 상태의 가장 마지막 단계이며, Active Close 즉, 먼저 close()를 요청한 곳에서 최종적으로 남게 되
     * 2*MSL(Maximum Segment Lifetime)동안 유지된다.
@@ -171,7 +176,7 @@ last_modified_at: 2022-05-26
 
 ### Connection Establishment
 
-* ![image]({{ site.url }}{{ site.baseurl }}/assets/images/2022-05-26-etc-network-11.png)
+![image]({{ site.url }}{{ site.baseurl }}/assets/images/2022-05-26-etc-network-11.png)
 
 1) 클라이언트에서 서버에 SYN 패킷을 보내고 SYN_SENT 상태가 됩니다.
 2) 서버는 클라이언트로부터 SYN를 받고 응답 패킷 ACK과 SYN 패킷을 패킷을 보냅니다. 상태는 LISTEN에서 SYS-SENT로 바뀝니다.
@@ -179,7 +184,8 @@ last_modified_at: 2022-05-26
 4) 클라이언트로부터 ACK 패킷을 받은 서버는 상태가 ESTABLISHED로 변경됩니다.
 
 ## Four way handshaking
-* ![image]({{ site.url }}{{ site.baseurl }}/assets/images/2022-05-26-etc-network-12.png)
+![image]({{ site.url }}{{ site.baseurl }}/assets/images/2022-05-26-etc-network-12.png)
+
 1) 클라이언트에서 서버와의 연결 종료를 위해 서버에 FIN 패킷을 보내고 FIN_WAIT1 상태가 됩니다. (반대로 서버에서 먼저 끊을 수 도 있습니다.)
 2) 서버는 클라이언트로부터 FIN을 받고 응답 패킷 ACK을 보냅니다. 상태는 CLOSE_WAIT가 됩니다
 3) 서버가 통신이 끝나면, 즉 연결을 종료할 준비가 되면 클라이언트에게 FIN패킷을 보내고 LAST_WAIT 상태가 됩니다  
@@ -199,7 +205,7 @@ last_modified_at: 2022-05-26
 * 4-way-핸드세이킹 과정 넣기.
 
 ## OSI 7 계층과 TCP/IP
-* ![image]({{ site.url }}{{ site.baseurl }}/assets/images/2022-05-26-etc-network-13.png)
+![image]({{ site.url }}{{ site.baseurl }}/assets/images/2022-05-26-etc-network-13.png)
 
 ## 시스템 프로그래밍
 ### fork, exec 를 통한 프로세스의 실행
@@ -367,6 +373,7 @@ int shutdown(int s, int how);
         * 2. 블로킹되지 않고 데이터의 전송이 가능한 소켓이 있는가? (write)
         * 3. 예외상황이 발생한 소켓은 무엇인가? (except)
 * 파일 디스크립터 관련 기억 리마인드용(1024개의 배열)
+
 ![image]({{ site.url }}{{ site.baseurl }}/assets/images/2022-05-26-etc-network-14.png)
 ![image]({{ site.url }}{{ site.baseurl }}/assets/images/2022-05-26-etc-network-15.png)
 
