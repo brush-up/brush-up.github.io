@@ -69,6 +69,7 @@ last_modified_at: 2022-05-26
 ![image]({{ site.url }}{{ site.baseurl }}/assets/images/2022-05-26-etc-network-06.png)
 
 * 패킷 비교
+
 ![image]({{ site.url }}{{ site.baseurl }}/assets/images/2022-05-26-etc-network-07.png)
 
 
@@ -124,6 +125,7 @@ last_modified_at: 2022-05-26
 
 ## TCP/IP 네트워크 데이터 전송 과정의 이해
 * 이더넷 프레임 구조
+
 ![image]({{ site.url }}{{ site.baseurl }}/assets/images/2022-05-26-etc-network-09.png)
 ![image]({{ site.url }}{{ site.baseurl }}/assets/images/2022-05-26-etc-network-10.png)
 
@@ -179,16 +181,22 @@ last_modified_at: 2022-05-26
 ![image]({{ site.url }}{{ site.baseurl }}/assets/images/2022-05-26-etc-network-11.png)
 
 1) 클라이언트에서 서버에 SYN 패킷을 보내고 SYN_SENT 상태가 됩니다.
+
 2) 서버는 클라이언트로부터 SYN를 받고 응답 패킷 ACK과 SYN 패킷을 패킷을 보냅니다. 상태는 LISTEN에서 SYS-SENT로 바뀝니다.
+
 3) 클라이언트는 받은 패킷에 대한 응답으로 ACK 패킷을 보내고 상태는 ESTABLISHED가 됩니다.
+
 4) 클라이언트로부터 ACK 패킷을 받은 서버는 상태가 ESTABLISHED로 변경됩니다.
 
 ## Four way handshaking
 ![image]({{ site.url }}{{ site.baseurl }}/assets/images/2022-05-26-etc-network-12.png)
 
 1) 클라이언트에서 서버와의 연결 종료를 위해 서버에 FIN 패킷을 보내고 FIN_WAIT1 상태가 됩니다. (반대로 서버에서 먼저 끊을 수 도 있습니다.)
+
 2) 서버는 클라이언트로부터 FIN을 받고 응답 패킷 ACK을 보냅니다. 상태는 CLOSE_WAIT가 됩니다
+
 3) 서버가 통신이 끝나면, 즉 연결을 종료할 준비가 되면 클라이언트에게 FIN패킷을 보내고 LAST_WAIT 상태가 됩니다  
+
 4) 클라이언트는 확인 패킷 ACK을 보내고 TIME_WAIT 상태가 됩니다.
 
 
