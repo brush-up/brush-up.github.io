@@ -119,8 +119,9 @@ last_modified_at: 2022-05-26
 
 ## TCP/IP 네트워크 데이터 전송 과정의 이해
 * 이더넷 프레임 구조
-    * ![image]({{ site.url }}{{ site.baseurl }}/assets/images/2022-05-26-etc-network-09.png)
-    * ![image]({{ site.url }}{{ site.baseurl }}/assets/images/2022-05-26-etc-network-10.png)
+![image]({{ site.url }}{{ site.baseurl }}/assets/images/2022-05-26-etc-network-09.png)
+![image]({{ site.url }}{{ site.baseurl }}/assets/images/2022-05-26-etc-network-10.png)
+
 ### ARP 에 의한 물리 주소 변환
 * ARP를 통한 물리 주소 확인한다
     * 이렇게 얻어진 물리주소를 가지고 이더넷 프레임을 만들수 있다. 
