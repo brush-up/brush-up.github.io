@@ -1,6 +1,6 @@
 ---
-title:  "[java] HashMap 관련 정리(java8에서 간결하고 효과적으로 사용하기)"
-excerpt: "Java HashMap 관련 정리(java8에서 간결하고 효과적으로 사용하기)"
+title:  "[java] 유용한 샘플 코드 정리"
+excerpt: "Java 유용한 샘플 코드 정리"
 
 categories:
   - Java
