@@ -29,6 +29,7 @@ String output = formatterOutput.format(date);
 ### Java Varargs 
 
 * 가변인자 관련 
+
 ```java
 //case1
 class Add{
