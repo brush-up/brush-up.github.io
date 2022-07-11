@@ -1,6 +1,6 @@
 ---
-title:  "[book] GoF 디자인 패턴! 이렇게 활용한다 : C++로 배우는 패턴의 이해와 활용"
-excerpt: "GoF 디자인 패턴! 이렇게 활용한다 : C++로 배우는 패턴의 이해와 활용"
+title:  "[book] GoF 디자인 패턴! 이렇게 활용한다 : C++로 배우는 패턴의 이해와 활용 01"
+excerpt: "GoF 디자인 패턴! 이렇게 활용한다 : C++로 배우는 패턴의 이해와 활용 01"
 
 categories:
   - Book
@@ -16,11 +16,11 @@ last_modified_at: 2022-07-11
 published: true
 ---
 
-아래책을 기반으로 함.
-GoF 디자인 패턴! 이렇게 활용한다 : C++로 배우는 패턴의 이해와 활용
-http://www.yes24.com/Product/Goods/1389246
+* 아래책을 기반으로 함.
+	* GoF 디자인 패턴! 이렇게 활용한다 : C++로 배우는 패턴의 이해와 활용
+		* http://www.yes24.com/Product/Goods/1389246
 
-* 책관련 소스
+* 책 소스
     * https://dw.hanbit.co.kr/exam/1281/
 
 
