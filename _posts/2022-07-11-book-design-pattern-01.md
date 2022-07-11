@@ -883,6 +883,7 @@ main()
 
 * 다만 문제처럼 어차피 응용 프로그램 마다 별도의 클래스가 필요하다면 굳이 이런 tmeplate 기법은 필요가 없다.
 * 일반적인 구조
+
 ![image]({{ site.url }}{{ site.baseurl }}/assets/images/2022-07-11-book-design-pattern-01-03.png)
 
 
