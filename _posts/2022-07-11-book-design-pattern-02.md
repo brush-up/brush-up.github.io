@@ -1,6 +1,6 @@
 ---
-title:  "[book] GoF 디자인 패턴! 이렇게 활용한다 : C++로 배우는 패턴의 이해와 활용 03"
-excerpt: "GoF 디자인 패턴! 이렇게 활용한다 : C++로 배우는 패턴의 이해와 활용 03"
+title:  "[book] GoF 디자인 패턴! 이렇게 활용한다 : C++로 배우는 패턴의 이해와 활용 02"
+excerpt: "GoF 디자인 패턴! 이렇게 활용한다 : C++로 배우는 패턴의 이해와 활용 02"
 
 categories:
   - Book
@@ -156,9 +156,11 @@ main()
 * Class Adapter 패턴의 구현은 다중 상속이기에 Client 에 공개될 인터페이스를 가진 클래스는 public 로 상속하고, 내부 구현을 위해 사용할 클래스는 private 형태로 상속하는 것이 일반적인 방법이다. 
 * Object Adapter 패턴 구현시 내부적으로 구현을 위해 참조하는 객체는 언제 생성할 것인가 고민거리이다. 
 * Object Adapter 패턴의 일반적인 클래스 구조
+
 ![image]({{ site.url }}{{ site.baseurl }}/assets/images/2022-07-11-book-design-pattern-02-01.png)
 
 * Class Adapter 패턴의 일반적인 클래스 구조
+
 ![image]({{ site.url }}{{ site.baseurl }}/assets/images/2022-07-11-book-design-pattern-02-02.png)
 
 
@@ -270,6 +272,7 @@ main()
     * 결국 구현 클래스가 하나 이상 늘어날 가능성이 있다면 구현 클래스의 상위에 추상 클래스를 두는 것이 꼭 필요하다고 볼수 있다. 
 
 * Bridge 패턴의 일반적인 클래스 구조
+
 ![image]({{ site.url }}{{ site.baseurl }}/assets/images/2022-07-11-book-design-pattern-02-03.png)
 
 
