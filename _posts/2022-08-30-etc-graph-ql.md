@@ -69,6 +69,7 @@ published: true
 * 여기서부터는 더욱 흥미롭습니다. GraphQL은 사용자에게 재사용 가능한 파편을 정의하고 변수를 할당할 수 있도록 합니다.
 * ID 목록을 요청해야 하며, 각 ID에 대한 일련의 기록을 요청해야 한다고 가정해 보겠습니다. GraphQL을 사용하면 단일 API 호출로 원하는 모든 요소를 풀링하는 쿼리를 구성할 수 있습니다.
 * 다음과 같은 쿼리가 있다고 가정해 보겠습니다.
+
 ```
 query HeroComparison($first: Int = 3) {
   leftComparison: hero(location: KANSAS) {
@@ -209,6 +210,7 @@ type Query {
 ```
 
 * 이제 위의 REST 요청과 유사한 요청을 보낼 수 있지만 이번에는 GraphQL을 사용합니다.
+
 ```
 // GET /graphql?query={ book(id: "1") { title, author { firstName } } }
 
