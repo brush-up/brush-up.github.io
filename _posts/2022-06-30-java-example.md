@@ -1,6 +1,6 @@
 ---
-title:  "[java] 유용한 샘플 코드 정리"
-excerpt: "Java 유용한 샘플 코드 정리"
+title:  "[java] 유용한 샘플 정리"
+excerpt: "Java 유용한 샘플 정리"
 
 categories:
   - Java
@@ -838,3 +838,14 @@ public class Main {
 	}
 }
 ```
+
+* java 접근 제어자의 종류
+
+
+| 접근 제어자 | 같은 클래스의 멤버 | 같은 패키지의 멤버 | 자식 클래스의 멤버 | 그 외의 영역 |
+| --- | --- | --- | --- | --- |
+| public | O | O | O | O |
+| protected | O | O | O | X |
+| default | O | O | X| X |
+| private | O | X | X | X |
+
