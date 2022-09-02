@@ -197,6 +197,10 @@ public static Date getEndDate(LocalDate localDate) {
 List<Sample> selectSampleAfterDate(@Param("afterDate") Date afterDate);
 ```
 
+## 기타
+* SpringBoot에서 날짜 타입 JSON 변환 관련 글 읽기.
+	*	https://jojoldu.tistory.com/361
+
 ## 참고
 * https://www.baeldung.com/java-zoneddatetime-offsetdatetime
 * https://www.baeldung.com/java-convert-date-to-offsetdatetime

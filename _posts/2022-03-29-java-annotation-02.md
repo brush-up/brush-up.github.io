@@ -210,3 +210,9 @@ public class TestCode {
     * 하위의 메소드들은 전부 @ResponseBody 가 적용됨
 * @ResponseBody
     * @Controller  어노테이션을 가지고 있지만 텍스트를 반환하고 싶을때 사용.
+
+
+* 아래 내용 추가 기입하기.
+	* ConditionalOnBean 
+	* DependsOn 
+
