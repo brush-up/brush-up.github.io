@@ -162,6 +162,13 @@ public class OneMybatisConfiguration {
         log.info("one sql session factory created");
         return MybatisUtils.sqlSessionFactoryBean(oneDataSource, mybatisProperties);
     }
+
+    //batch 용 sessiontemplate 도 만들어 보자.
+    @Bean(name="oneBatchSqlSession")
+    public SqlSessionTemplate oneBatchSqlSession(@Qualifier("oneSqlSessionFactory") SqlSessionFactory sqlSessionFactory) {
+        return new SqlSessionTemplate(sqlSessionFactory, ExecutorType.BATCH);
+    }
+
 }
 
 //TwoMybatisConfiguration.java 는 아래처럼 하면 될듯.
