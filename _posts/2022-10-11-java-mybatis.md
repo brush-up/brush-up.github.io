@@ -169,6 +169,12 @@ public class OneMybatisConfiguration {
         return new SqlSessionTemplate(sqlSessionFactory, ExecutorType.BATCH);
     }
 
+
+    // @Bean(name="commonBatchSqlSession")
+    // public SqlSessionTemplate commonBatchSqlSession(@Qualifier("commonSqlSessionFactory") SqlSessionFactory sqlSessionFactory) {
+    //     return new SqlSessionTemplate(sqlSessionFactory, ExecutorType.BATCH);
+    // }
+
 }
 
 //TwoMybatisConfiguration.java 는 아래처럼 하면 될듯.
