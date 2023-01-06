@@ -44,6 +44,7 @@ $ pod init
 
 * 생성된 Profile 내용
 	* TestProject 이 프로젝트 이름임.
+
 ```
 # Uncomment the next line to define a global platform for your project
 # platform :ios, '9.0'
@@ -67,6 +68,7 @@ $ open -a Xcode Podfile
 * Podfile에 원하는 라이브러리를 추가 후 저장 하자 
 	* 아래는 수정한 Profile 내용 
 	* SDWebImageWebPCoder 를 추가함.
+
 ```
 
 # Uncomment the next line to define a global platform for your project
