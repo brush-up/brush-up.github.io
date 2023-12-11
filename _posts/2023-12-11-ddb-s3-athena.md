@@ -22,58 +22,57 @@ published: true
 * AWS 콘솔이 은근 바뀌어서 이제는 다를 수도 있지만, 일단은 여기까지만.
 
 # 1. DDB 에서 S3 로 데이터 이전하기
-
-* 1. IAM role 생성 필요.
-    * 이 부분은 잘 모르니 pass
-        * 아마 Permissions Policies section 의 AWSGlueServiceRoe, AmazonDynamoDBFullAccess, AmazonS3FullAccess 등이 필요한듯?
-* 2. DDB 에서 S3 로 데이터 추출하기
-    * step1. Glue Database 생성하기.
-        * AWS Glue console 로 이동
-        * Data Catalog 에서 Database 선택후 Add database 로 추가하자
-        * {database_name}_ddb 와 같은 식으로 이름을 지어본뒤 Create database 로 생성하자. 
-    * step2. Glue Crawler 생성하기 (source 는 DDB, destination 은 Glue)
-        * AWS Glue console 에서 
-        * Data Catalog 에서 Crawlers 선택후 Create crawler 로 추가하자
-        * {tableName_ddb_glue_crawler} 와 같은 크롤러 이름으로 만들어 보자 ( {tableNAme}은 S3 으로 내보내려는 DynamoDB 의 테이블 이름으로 해보자. )
-        * 데이터가 아직 Glue 테이블에 매핑되지 않았으므로 Add a data source 를 실행하자.
-        * Drop-down 메뉴에서 Data souce 를 DynamoDB 를 선택하자. 
-        * S3 로 내보내려는 DynamoDB 의 테이블 이름을 지정하자
-        * Glue, S3, DynamoDB 에 접근하기 위해 이전에 생성한 IAM role 을 선택하자. 
-        * target database 로 이전에 생성한 Glue Database 를 선택하자 
-        * Crawler schedule 를 On-demand 로 설정하자. (추후 스케줄을 바꿀예정)
-        * Create crawler 로 crawler 를 생성하자
-    * step3. Glue table 생성을 위해 Crawler 를 수행하기.
-        * AWS Glue → Data Catalog → Crawlers
-        * step2 에서 Run crawler 로 생성했던 crawler 를 run 하자. 
-        * complete 되면 Glue table 이 생성이 된다.
-        * AWS Glue → Data Catalog → Databases
-        * 원하는 table 을  database 에서 선택한뒤
-        * list 에서 최근 생성된 항목을 선택해서 스키마 정보가 이상없는지 확인해보자. 
-    * step4. S3 Bucket 생성하기.
-    * step5. scheduled Glue ETL 생성하기 (소스는 Glue, destination 은 S3)
-        * AWS Glue → ETL Jobs 
-        * Visual with a source and target 를 선택한뒤
-        * Source 는 AWS Glue Data Catalog 를 선택하고, Target 은 Amazon S3 로 선택하자
-        * Data source
-            * Data catalog 선택후 이름을 지정하고
-            * DynamoDB source 에서 Choose from the AWS Glue Data Catalog 를 선택하자 
-                * 많은 예시들이 Choose the DynamoDB table directly 를 선택해서 진행하는데, 이렇게 하면 기본적으로 ddb 의 pk, sk 등만 옮겨진다, 일일이 하나하나 지정해줘야지 다른 컬럼들을 복사할수가 있다. 
-            * Database 에서 이전에 생성한 것으로 지정하자. 
-            * Table 에서 이전한 테이블 이름을 선택하고.
-        * Transfrom
-            * S3 로 내보내고 싶지 않는 항목이 있으면 여기서 제거하자. 
-                * 최근에 업데이트로 자동으로 선택되지 않는듯하다. 수동으로 선택해서 추가하자.
-                    * Change Schema 를 추가하자?
-        * Data Target
-            * Format(JSON), Compression Type 등을 지정하자
-                * Format, Compression Type 별 차이는 모르겠....
-                    * https://medium.com/@autumn.bom/aws-athena-convert-to-parquet-with-snappy-89c93af3c8c0 이 자료보면 도움이 좀 될듯하다. 
-        * 네비게이션 바에서 Job detail 을 클릭해서 IAM role 등을 설정 후 
-        * 꼭 Save 후 Run 을 하자. (이건 step6. 이후 진행하자. ) 
-            * 현재 화면에 나와있는 세팅으로 Run 되지 않는다. 꼭 Save 하자. 
-            * job 이 실행완료가 되면 위에서 설정한 S3 에 데이터가 잘 보일 것이다. 
-    * step6. Script 수정하기.
-        * batch 가 실행되는 시점의 날짜별로 파티션을 나누기 위해 아래 작업을 진행함
+1. IAM role 생성 필요.
+* 이 부분은 잘 모르니 pass
+    * 아마 Permissions Policies section 의 AWSGlueServiceRoe, AmazonDynamoDBFullAccess, AmazonS3FullAccess 등이 필요한듯?
+2. DDB 에서 S3 로 데이터 추출하기
+* step1. Glue Database 생성하기.
+    * AWS Glue console 로 이동
+    * Data Catalog 에서 Database 선택후 Add database 로 추가하자
+    * {database_name}_ddb 와 같은 식으로 이름을 지어본뒤 Create database 로 생성하자. 
+* step2. Glue Crawler 생성하기 (source 는 DDB, destination 은 Glue)
+    * AWS Glue console 에서 
+    * Data Catalog 에서 Crawlers 선택후 Create crawler 로 추가하자
+    * {tableName_ddb_glue_crawler} 와 같은 크롤러 이름으로 만들어 보자 ( {tableNAme}은 S3 으로 내보내려는 DynamoDB 의 테이블 이름으로 해보자. )
+    * 데이터가 아직 Glue 테이블에 매핑되지 않았으므로 Add a data source 를 실행하자.
+    * Drop-down 메뉴에서 Data souce 를 DynamoDB 를 선택하자. 
+    * S3 로 내보내려는 DynamoDB 의 테이블 이름을 지정하자
+    * Glue, S3, DynamoDB 에 접근하기 위해 이전에 생성한 IAM role 을 선택하자. 
+    * target database 로 이전에 생성한 Glue Database 를 선택하자 
+    * Crawler schedule 를 On-demand 로 설정하자. (추후 스케줄을 바꿀예정)
+    * Create crawler 로 crawler 를 생성하자
+* step3. Glue table 생성을 위해 Crawler 를 수행하기.
+    * AWS Glue → Data Catalog → Crawlers
+    * step2 에서 Run crawler 로 생성했던 crawler 를 run 하자. 
+    * complete 되면 Glue table 이 생성이 된다.
+    * AWS Glue → Data Catalog → Databases
+    * 원하는 table 을  database 에서 선택한뒤
+    * list 에서 최근 생성된 항목을 선택해서 스키마 정보가 이상없는지 확인해보자. 
+* step4. S3 Bucket 생성하기.
+* step5. scheduled Glue ETL 생성하기 (소스는 Glue, destination 은 S3)
+    * AWS Glue → ETL Jobs 
+    * Visual with a source and target 를 선택한뒤
+    * Source 는 AWS Glue Data Catalog 를 선택하고, Target 은 Amazon S3 로 선택하자
+    * Data source
+        * Data catalog 선택후 이름을 지정하고
+        * DynamoDB source 에서 Choose from the AWS Glue Data Catalog 를 선택하자 
+            * 많은 예시들이 Choose the DynamoDB table directly 를 선택해서 진행하는데, 이렇게 하면 기본적으로 ddb 의 pk, sk 등만 옮겨진다, 일일이 하나하나 지정해줘야지 다른 컬럼들을 복사할수가 있다. 
+        * Database 에서 이전에 생성한 것으로 지정하자. 
+        * Table 에서 이전한 테이블 이름을 선택하고.
+    * Transfrom
+        * S3 로 내보내고 싶지 않는 항목이 있으면 여기서 제거하자. 
+            * 최근에 업데이트로 자동으로 선택되지 않는듯하다. 수동으로 선택해서 추가하자.
+                * Change Schema 를 추가하자?
+    * Data Target
+        * Format(JSON), Compression Type 등을 지정하자
+            * Format, Compression Type 별 차이는 모르겠....
+                * https://medium.com/@autumn.bom/aws-athena-convert-to-parquet-with-snappy-89c93af3c8c0 이 자료보면 도움이 좀 될듯하다. 
+    * 네비게이션 바에서 Job detail 을 클릭해서 IAM role 등을 설정 후 
+    * 꼭 Save 후 Run 을 하자. (이건 step6. 이후 진행하자. ) 
+        * 현재 화면에 나와있는 세팅으로 Run 되지 않는다. 꼭 Save 하자. 
+        * job 이 실행완료가 되면 위에서 설정한 S3 에 데이터가 잘 보일 것이다. 
+* step6. Script 수정하기.
+    * batch 가 실행되는 시점의 날짜별로 파티션을 나누기 위해 아래 작업을 진행함
 
 ```
 import datetime
