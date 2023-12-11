@@ -23,10 +23,12 @@ published: true
 
 # 1. DDB 에서 S3 로 데이터 이전하기
 1. IAM role 생성 필요.
+
 * 이 부분은 잘 모르니 pass
     * 아마 Permissions Policies section 의 AWSGlueServiceRoe, AmazonDynamoDBFullAccess, AmazonS3FullAccess 등이 필요한듯?
 
 2. DDB 에서 S3 로 데이터 추출하기
+
 * step1. Glue Database 생성하기.
     * AWS Glue console 로 이동
     * Data Catalog 에서 Database 선택후 Add database 로 추가하자
