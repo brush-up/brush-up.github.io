@@ -25,11 +25,13 @@ published: true
 1. IAM role 생성 필요.
 * 이 부분은 잘 모르니 pass
     * 아마 Permissions Policies section 의 AWSGlueServiceRoe, AmazonDynamoDBFullAccess, AmazonS3FullAccess 등이 필요한듯?
+
 2. DDB 에서 S3 로 데이터 추출하기
 * step1. Glue Database 생성하기.
     * AWS Glue console 로 이동
     * Data Catalog 에서 Database 선택후 Add database 로 추가하자
     * {database_name}_ddb 와 같은 식으로 이름을 지어본뒤 Create database 로 생성하자. 
+
 * step2. Glue Crawler 생성하기 (source 는 DDB, destination 은 Glue)
     * AWS Glue console 에서 
     * Data Catalog 에서 Crawlers 선택후 Create crawler 로 추가하자
@@ -41,6 +43,7 @@ published: true
     * target database 로 이전에 생성한 Glue Database 를 선택하자 
     * Crawler schedule 를 On-demand 로 설정하자. (추후 스케줄을 바꿀예정)
     * Create crawler 로 crawler 를 생성하자
+
 * step3. Glue table 생성을 위해 Crawler 를 수행하기.
     * AWS Glue → Data Catalog → Crawlers
     * step2 에서 Run crawler 로 생성했던 crawler 를 run 하자. 
@@ -48,7 +51,9 @@ published: true
     * AWS Glue → Data Catalog → Databases
     * 원하는 table 을  database 에서 선택한뒤
     * list 에서 최근 생성된 항목을 선택해서 스키마 정보가 이상없는지 확인해보자. 
+
 * step4. S3 Bucket 생성하기.
+
 * step5. scheduled Glue ETL 생성하기 (소스는 Glue, destination 은 S3)
     * AWS Glue → ETL Jobs 
     * Visual with a source and target 를 선택한뒤
@@ -71,6 +76,7 @@ published: true
     * 꼭 Save 후 Run 을 하자. (이건 step6. 이후 진행하자. ) 
         * 현재 화면에 나와있는 세팅으로 Run 되지 않는다. 꼭 Save 하자. 
         * job 이 실행완료가 되면 위에서 설정한 S3 에 데이터가 잘 보일 것이다. 
+
 * step6. Script 수정하기.
     * batch 가 실행되는 시점의 날짜별로 파티션을 나누기 위해 아래 작업을 진행함
 
@@ -116,7 +122,7 @@ glueContext.get_logger().info(f"Current date year is: {year}")
 
 * step1. Glue Database 생성하기
     * AWS Glue → Data Catalog → Databases 에서 Add database
-    * {databseName}_s3 같은 이름을 지은후 Create 하자. 
+    * {databseName}_s3 같은 이름을 지은후 Create 하자.
 * step2. glue crawler 생성하기 (source 는 S3, destination 은 Glue Table)
     * AWS Glue → Data Catalog → Crawlers 에서 create Crawler 하기
     * {tableNAme}_s3_glue_crawler 같은 이름을 짓기
